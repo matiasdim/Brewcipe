@@ -14,6 +14,8 @@
 		1307A40828481D8900083298 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1307A40628481D8900083298 /* LaunchScreen.storyboard */; };
 		1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307A42B28481E7B00083298 /* NavigationControllerRouterTests.swift */; };
 		1307A42E28481F1800083298 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1307A42D28481F1800083298 /* NavigationControllerRouter.swift */; };
+		1328E5C528483B88001527FB /* BrewViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C428483B88001527FB /* BrewViewControllerFactory.swift */; };
+		1328E5C728483BAA001527FB /* Brew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C628483BAA001527FB /* Brew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		1307A40E28481D8900083298 /* BrewcipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrewcipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1307A42B28481E7B00083298 /* NavigationControllerRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTests.swift; sourceTree = "<group>"; };
 		1307A42D28481F1800083298 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
+		1328E5C428483B88001527FB /* BrewViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewViewControllerFactory.swift; sourceTree = "<group>"; };
+		1328E5C628483BAA001527FB /* Brew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 		1307A3FA28481D8500083298 /* Brewcipe */ = {
 			isa = PBXGroup;
 			children = (
+				1328E5C628483BAA001527FB /* Brew.swift */,
+				1328E5C428483B88001527FB /* BrewViewControllerFactory.swift */,
 				1307A3FB28481D8500083298 /* AppDelegate.swift */,
 				1307A3FD28481D8500083298 /* SceneDelegate.swift */,
 				1307A3FF28481D8500083298 /* ViewController.swift */,
@@ -200,8 +206,10 @@
 			files = (
 				1307A42E28481F1800083298 /* NavigationControllerRouter.swift in Sources */,
 				1307A40028481D8500083298 /* ViewController.swift in Sources */,
+				1328E5C528483B88001527FB /* BrewViewControllerFactory.swift in Sources */,
 				1307A3FC28481D8500083298 /* AppDelegate.swift in Sources */,
 				1307A3FE28481D8500083298 /* SceneDelegate.swift in Sources */,
+				1328E5C728483BAA001527FB /* Brew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +300,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -345,6 +354,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

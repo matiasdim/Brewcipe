@@ -39,7 +39,6 @@ class NavigationControllerRouterTests: XCTestCase {
         sut.showRecipeDetail(for: brew)
         
         XCTAssertEqual(navigationController.presentCallCount, 1)
-        
     }
     
     // MARK: - Helpers

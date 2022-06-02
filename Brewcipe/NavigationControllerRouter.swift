@@ -21,10 +21,4 @@ struct NavigationControllerRouter {
     }
 }
 
-protocol BrewViewControllerFactory {
-    func listViewController(for brews: [Brew]) -> UITableViewController
-    func detailViewController(for brew: Brew) -> UIViewController
-    func recipeViewController(for brew: Brew) -> UIViewController
-}
 
-struct Brew {}
