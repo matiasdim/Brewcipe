@@ -9,31 +9,41 @@ import XCTest
 @testable import Brewcipe
 
 class NavigationControllerRouterTests: XCTestCase {
+    
+    private var factory: ViewControllerFactoryStub!
+    private var brew: Brew!
+    private var navigationController: NonAnimatedNavigationController!
+    private var sut: NavigationControllerRouter!
+    
+    override func setUp() {
+        super.setUp()
+        factory = ViewControllerFactoryStub()
+        brew = Brew(name: "B1", tagline: "T1", imageUrl: nil, abv: 9.2, ibu: 90, targetFg: 900, targetOg: 890)
+        navigationController = NonAnimatedNavigationController(rootViewController: UITableViewController())
+        sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
+    }
+    
+    override func tearDown() {
+        factory = nil
+        brew = nil
+        navigationController = nil
+        sut = nil
+        super.tearDown()
+    }
 
     func test_navigationControllerAndViewControllerFactory_shouldExists() {
-        let factory = ViewControllerFactoryStub()
-        let sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
-        
         XCTAssertNotNil(sut.navigationController)
         XCTAssertNotNil(sut.factory)
     }
 
         
     func test_selectedBrew_shouldShowBrewDetailViewController() {
-        let factory = ViewControllerFactoryStub()
-        let brew = Brew()
-        let sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
-        
         sut.selected(brew)
         
         XCTAssertEqual(sut.navigationController.viewControllers.count, 2)
     }
     
     func test_showRecipeDetailFoBrew_shouldShowRecipeViewModally() {
-        let factory = ViewControllerFactoryStub()
-        let brew = Brew()
-        let sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
-        
         XCTAssertEqual(navigationController.presentCallCount, 0)
         
         sut.showRecipeDetail(for: brew)
@@ -42,7 +52,6 @@ class NavigationControllerRouterTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private let navigationController = NonAnimatedNavigationController(rootViewController: UITableViewController())
     
     private class NonAnimatedNavigationController: UINavigationController {
         var presentCallCount = 0
