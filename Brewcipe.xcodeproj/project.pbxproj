@@ -96,19 +96,13 @@
 		1307A3FA28481D8500083298 /* Brewcipe */ = {
 			isa = PBXGroup;
 			children = (
-				1328E5C628483BAA001527FB /* Brew.swift */,
-				1328E5C428483B88001527FB /* BrewViewControllerFactory.swift */,
-				1307A3FB28481D8500083298 /* AppDelegate.swift */,
-				1307A3FD28481D8500083298 /* SceneDelegate.swift */,
-				1307A40428481D8900083298 /* Assets.xcassets */,
-				1307A40628481D8900083298 /* LaunchScreen.storyboard */,
 				1307A40928481D8900083298 /* Info.plist */,
-				1307A42D28481F1800083298 /* NavigationControllerRouter.swift */,
-				13EE357B28496B130058C2F9 /* BrewCell.swift */,
-				1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */,
-				1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */,
-				13EE357F28496DC40058C2F9 /* BrewCell.xib */,
-				139ABE042848F9AB00256137 /* BrewListViewModel.swift */,
+				1307A40428481D8900083298 /* Assets.xcassets */,
+				13E61A2C284A85890014E42C /* UI */,
+				13E61A2B284A856E0014E42C /* Routing */,
+				13E61A2A284A85580014E42C /* Main */,
+				13E61A28284A852A0014E42C /* Presentation */,
+				13E61A27284A85110014E42C /* Domain */,
 			);
 			path = Brewcipe;
 			sourceTree = "<group>";
@@ -116,12 +110,98 @@
 		1307A41128481D8900083298 /* BrewcipeTests */ = {
 			isa = PBXGroup;
 			children = (
-				1307A42B28481E7B00083298 /* NavigationControllerRouterTests.swift */,
-				1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */,
-				139ABE022848F99200256137 /* BrewListViewModelTests.swift */,
+				13E61A30284A86A20014E42C /* Presentation */,
+				13E61A2E284A86920014E42C /* Routing */,
+				13E61A2F284A869A0014E42C /* UI */,
 				13EE3579284918190058C2F9 /* TestHelpers.swift */,
 			);
 			path = BrewcipeTests;
+			sourceTree = "<group>";
+		};
+		13E61A27284A85110014E42C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1328E5C628483BAA001527FB /* Brew.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		13E61A28284A852A0014E42C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				13E61A29284A85480014E42C /* BrewList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		13E61A29284A85480014E42C /* BrewList */ = {
+			isa = PBXGroup;
+			children = (
+				139ABE042848F9AB00256137 /* BrewListViewModel.swift */,
+			);
+			path = BrewList;
+			sourceTree = "<group>";
+		};
+		13E61A2A284A85580014E42C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1307A3FB28481D8500083298 /* AppDelegate.swift */,
+				1307A3FD28481D8500083298 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		13E61A2B284A856E0014E42C /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				1328E5C428483B88001527FB /* BrewViewControllerFactory.swift */,
+				1307A42D28481F1800083298 /* NavigationControllerRouter.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		13E61A2C284A85890014E42C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				13E61A2D284A859A0014E42C /* BrewList */,
+				1307A40628481D8900083298 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		13E61A2D284A859A0014E42C /* BrewList */ = {
+			isa = PBXGroup;
+			children = (
+				13EE357B28496B130058C2F9 /* BrewCell.swift */,
+				13EE357F28496DC40058C2F9 /* BrewCell.xib */,
+				1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */,
+				1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */,
+			);
+			path = BrewList;
+			sourceTree = "<group>";
+		};
+		13E61A2E284A86920014E42C /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				1307A42B28481E7B00083298 /* NavigationControllerRouterTests.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		13E61A2F284A869A0014E42C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		13E61A30284A86A20014E42C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				139ABE022848F99200256137 /* BrewListViewModelTests.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
