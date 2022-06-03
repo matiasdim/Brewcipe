@@ -8,36 +8,37 @@
 import UIKit
 
 class BrewCell: UITableViewCell {
-    struct Model{
-        let name: String
-        let tagLine: String
-        let imageURL: String?
-        let abv: String
-        let ibu: String
-        let targetFg: String
-        let targetOg: String
-    }
-    private(set) var nameLabel: UILabel = UILabel()
-    private(set) var taglineLabel: UILabel = UILabel()
-    private(set) var brewImageView: UIImageView = UIImageView()
-    private(set) var abvLabel: UILabel = UILabel()
-    private(set) var ibuLabel: UILabel = UILabel()
-    private(set) var targetFgLabel: UILabel = UILabel()
-    private(set) var targetOgLabel: UILabel = UILabel()
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var taglineLabel: UILabel!
+    @IBOutlet weak var abvLabel: UILabel!
+    @IBOutlet weak var ibuLabel: UILabel!
+    @IBOutlet weak var targetFgLabel: UILabel!
+    @IBOutlet weak var targetOgLabel: UILabel!
+    @IBOutlet weak var brewImageView: UIImageView!
     
-    func configure(model: Model) {
-        nameLabel.text = model.name
-        taglineLabel.text = model.tagLine
-        abvLabel.text = model.abv
-        ibuLabel.text = model.ibu
-        targetFgLabel.text = model.targetFg
-        targetOgLabel.text = model.targetOg
+    func configure(name: String,
+                   tagline: String,
+                   abv: String,
+                   ibu: String,
+                   targetFg: String,
+                   targetOg: String,
+                   brewImageURL: String) {
+        nameLabel.text = name
+        taglineLabel.text = tagline
+        abvLabel.text = abv
+        ibuLabel.text = ibu
+        targetFgLabel.text = targetFg
+        targetOgLabel.text = targetOg
         
-        guard let imageURL = model.imageURL, let url = getImageURL(from: imageURL) else { return }
-        brewImageView.image = UIImage(contentsOfFile: url.path)
+        setImage(from: brewImageURL)
     }
     
-    private func getImageURL(from src: String) -> URL? {
-        URL(string: src)
+    private func setImage(from src: String) {
+        if let url = URL(string: src), let data = try? Data(contentsOf: url) {
+            // Create Image and Update Image View
+            brewImageView.image = UIImage(data: data)
+        } else {
+            brewImageView.image = .remove
+        }
     }
 }
