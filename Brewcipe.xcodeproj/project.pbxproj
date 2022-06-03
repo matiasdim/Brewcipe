@@ -98,11 +98,11 @@
 			children = (
 				1307A40928481D8900083298 /* Info.plist */,
 				1307A40428481D8900083298 /* Assets.xcassets */,
-				13E61A2C284A85890014E42C /* UI */,
-				13E61A2B284A856E0014E42C /* Routing */,
+				13E61A27284A85110014E42C /* Domain */,
 				13E61A2A284A85580014E42C /* Main */,
 				13E61A28284A852A0014E42C /* Presentation */,
-				13E61A27284A85110014E42C /* Domain */,
+				13E61A2B284A856E0014E42C /* Routing */,
+				13E61A2C284A85890014E42C /* UI */,
 			);
 			path = Brewcipe;
 			sourceTree = "<group>";
