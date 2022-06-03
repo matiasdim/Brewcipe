@@ -21,6 +21,7 @@ class BrewListViewControllerTest: XCTestCase {
         sut = nil
         super.tearDown()
     }
+    
     func test_viewController_shouldHaveViewModel() {
         XCTAssertNotNil(sut.viewModel, "viewModel")
     }
@@ -28,6 +29,11 @@ class BrewListViewControllerTest: XCTestCase {
     func test_tablewView_shouldNotBeNil() {
         XCTAssertNotNil(sut.tableView, "tableView")
     }
+    
+    func test_brewListViewController_shouldHaveCorrectTitle() {
+        XCTAssertEqual(sut.title, "Brews")
+    }
+    
 
     func test_tablewViewDelegateAndDataSource_shouldBeSet() {
         XCTAssertNotNil(sut.tableView.delegate, "table delegate")
@@ -40,6 +46,13 @@ class BrewListViewControllerTest: XCTestCase {
 
     func test_tableViewRowsNumber_shouldBe3() {
         XCTAssertEqual(numbersOfRows(in: sut.tableView, section: 0), 3)
+    }
+    
+    func test_tableViewRowsNumberWithNoViewModel_shouldBe0() {
+        let sut = BrewListViewController()
+        sut.loadViewIfNeeded()
+        
+        XCTAssertEqual(numbersOfRows(in: sut.tableView, section: 0), 0)
     }
 
     func test_tableViewCell_ShouldBeBrewCell() {
@@ -83,6 +96,19 @@ class BrewListViewControllerTest: XCTestCase {
         XCTAssertEqual(cell?.targetOgLabel.text, "1044")
     }
     
+    func test_tableViewCellForRow0WithNoViewModel_ShouldSetEmptyLabels() {
+        let sut = BrewListViewController()
+        sut.loadViewIfNeeded()
+        let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
+        
+        XCTAssertEqual(cell?.nameLabel.text, "")
+        XCTAssertEqual(cell?.taglineLabel.text, "")
+        XCTAssertEqual(cell?.abvLabel.text, "")
+        XCTAssertEqual(cell?.ibuLabel.text, "")
+        XCTAssertEqual(cell?.targetFgLabel.text, "")
+        XCTAssertEqual(cell?.targetOgLabel.text, "")
+    }
+    
     func test_brewCellWithInvalidImage_shouldsetDefaultImage() {
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
         
@@ -93,7 +119,7 @@ class BrewListViewControllerTest: XCTestCase {
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 2, section: 0)) as? BrewCell
         
         XCTAssertNotNil(cell?.brewImageView.image)
-        XCTAssertNotEqual(cell?.brewImageView.image, UIImage.remove)        
+        XCTAssertNotEqual(cell?.brewImageView.image, UIImage.remove)
     }
 
     

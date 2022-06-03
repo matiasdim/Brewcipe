@@ -22,6 +22,8 @@ class BrewListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = viewModel?.listTitle
         tableView.register(UINib(nibName: brewCellClassName, bundle: nil), forCellReuseIdentifier: brewCellClassName)
     }
 }
