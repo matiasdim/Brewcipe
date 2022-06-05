@@ -67,7 +67,7 @@ class NavigationControllerRouterTests: XCTestCase {
         }
     }
     
-    private class ViewControllerFactoryStub: BrewViewControllerFactory {
+    private class ViewControllerFactoryStub: ViewControllerFactory {
         
         func listViewController(for brews: [Brew]) -> UIViewController {
             return UIViewController()

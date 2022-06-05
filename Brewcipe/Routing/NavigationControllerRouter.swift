@@ -10,7 +10,7 @@ import UIKit
 
 struct NavigationControllerRouter {
     private(set) var navigationController: UINavigationController
-    private(set) var factory: BrewViewControllerFactory
+    private(set) var factory: ViewControllerFactory
     
     func selected(_ brew: Brew) {
         navigationController.pushViewController(factory.detailViewController(for: brew), animated: false)
