@@ -24,6 +24,8 @@ class BrewListViewController: UIViewController {
         super.viewDidLoad()
         
         title = viewModel?.listTitle
+        
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: brewCellClassName, bundle: nil), forCellReuseIdentifier: brewCellClassName)
     }
 }
@@ -53,5 +55,14 @@ extension BrewListViewController: UITableViewDataSource {
         
         return cell
     }
+}
 
+extension BrewListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return UITableView.automaticDimension
+//    }
 }
