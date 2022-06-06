@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ViewControllerFactory {
-    func listViewController(for brews: [Brew]) -> UIViewController
-    func detailViewController(for brew: Brew) -> UIViewController
-    func recipeViewController(for brew: Brew) -> UIViewController
+    func brewsViewController(for brews: [Brew]) -> UIViewController
+    func brewDetailViewController(for brew: Brew) -> UIViewController
+    func recipeViewController(for recipe: String) -> UIViewController
 }

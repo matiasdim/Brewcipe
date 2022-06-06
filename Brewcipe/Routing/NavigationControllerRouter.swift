@@ -13,11 +13,11 @@ struct NavigationControllerRouter {
     private(set) var factory: ViewControllerFactory
     
     func selected(_ brew: Brew) {
-        navigationController.pushViewController(factory.detailViewController(for: brew), animated: false)
+        navigationController.pushViewController(factory.brewDetailViewController(for: brew), animated: false)
     }
     
     func showRecipeDetail(for brew: Brew) {
-        navigationController.present(factory.recipeViewController(for: brew), animated: true)
+        navigationController.present(factory.recipeViewController(for: "recipe description"), animated: true)
     }
 }
 

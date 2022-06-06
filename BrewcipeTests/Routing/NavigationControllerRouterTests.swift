@@ -19,7 +19,7 @@ class NavigationControllerRouterTests: XCTestCase {
         super.setUp()
         factory = ViewControllerFactoryStub()
         brew = Brew(name: "B1", tagline: "T1", imageUrl: nil, abv: 9.2, ibu: 90, targetFg: 900, targetOg: 890)
-        navigationController = NonAnimatedNavigationController(rootViewController: factory.listViewController(for: []))
+        navigationController = NonAnimatedNavigationController(rootViewController: factory.brewsViewController(for: []))
         sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
     }
     
@@ -68,16 +68,15 @@ class NavigationControllerRouterTests: XCTestCase {
     }
     
     private class ViewControllerFactoryStub: ViewControllerFactory {
+        func recipeViewController(for recipe: String) -> UIViewController {
+            UIViewController()
+        }
         
-        func listViewController(for brews: [Brew]) -> UIViewController {
+        func brewsViewController(for brews: [Brew]) -> UIViewController {
             return UIViewController()
         }
         
-        func detailViewController(for brew: Brew) -> UIViewController {
-            return UIViewController()
-        }
-        
-        func recipeViewController(for brew: Brew) -> UIViewController {
+        func brewDetailViewController(for brew: Brew) -> UIViewController {
             return UIViewController()
         }
     }
