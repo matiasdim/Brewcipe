@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ViewControllerFactory {
-    func brewsViewController(for brews: [Brew]) -> UIViewController
+    func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController
     func brewDetailViewController(for brew: Brew) -> UIViewController
     func recipeViewController(for recipe: String) -> UIViewController
 }

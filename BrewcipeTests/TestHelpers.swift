@@ -14,3 +14,11 @@ func numbersOfRows(in table: UITableView, section: Int) -> Int? {
 func cellForRow(in table: UITableView, indexPath: IndexPath) -> UITableViewCell? {
     table.dataSource?.tableView(table, cellForRowAt: indexPath)
 }
+
+func didSelectRowAt(in table: UITableView, indexPath: IndexPath) {
+    table.delegate?.tableView?(table, didSelectRowAt: indexPath)
+}
+
+func estimatedHeightForRowAt(in table: UITableView, indexPath: IndexPath) -> CGFloat? {
+    table.delegate?.tableView?(table, estimatedHeightForRowAt: indexPath)
+}

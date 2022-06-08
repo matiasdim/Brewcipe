@@ -9,56 +9,57 @@ import XCTest
 @testable import Brewcipe
 
 class BrewListViewControllerTest: XCTestCase {
-    private var sut: BrewListViewController!
-    
-    override func setUp() {
-        super.setUp()
-        sut = BrewListViewController(viewModel: makeViewModel(makeBrews()))
-        sut.loadViewIfNeeded()
-    }
-
-    override func tearDown() {
-        sut = nil
-        super.tearDown()
-    }
     
     func test_viewController_shouldHaveViewModel() {
-        XCTAssertNotNil(sut.viewModel, "viewModel")
+        XCTAssertNotNil(makeSut().viewModel, "viewModel")
     }
     
     func test_tablewView_shouldNotBeNil() {
+        let sut = makeSut()
+        
         XCTAssertNotNil(sut.tableView, "tableView")
     }
     
     func test_brewListViewController_shouldHaveCorrectTitle() {
+        let sut = makeSut()
         XCTAssertEqual(sut.title, "Brews")
     }
     
 
     func test_tablewViewDelegateAndDataSource_shouldBeSet() {
+        let sut = makeSut()
+        
         XCTAssertNotNil(sut.tableView.delegate, "table delegate")
         XCTAssertNotNil(sut.tableView.dataSource, "table data source")
     }
 
+
     func test_tableViewSections_shouldBe1() {
+        let sut = makeSut()
+        
         XCTAssertEqual(sut.tableView.dataSource?.numberOfSections?(in: sut.tableView), 1)
+    }
+    
+    func test_tablewViewEstimatedRowHeightAt0_shouldBeAutomatic() {
+        let sut = makeSut(brews: makeBrews())
+        
+        XCTAssertEqual(estimatedHeightForRowAt(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)), UITableView.automaticDimension)
     }
 
     func test_tableViewRowsNumber_shouldBe3() {
+        let sut =  makeSut(brews: makeBrews())
+
         XCTAssertEqual(numbersOfRows(in: sut.tableView, section: 0), 3)
     }
     
     func test_tableViewRowsNumberWithNoViewModel_shouldBe0() {
-        let sut = BrewListViewController()
-        sut.loadViewIfNeeded()
+        let sut = makeSutWithNoViewModel()
         
         XCTAssertEqual(numbersOfRows(in: sut.tableView, section: 0), 0)
     }
 
     func test_tableViewCell_ShouldBeBrewCell() {
-        let brews = makeBrews()
-        let sut = BrewListViewController(viewModel: makeViewModel(brews))
-        sut.loadViewIfNeeded()
+        let sut =  makeSut(brews: makeBrews())
 
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
 
@@ -66,6 +67,8 @@ class BrewListViewControllerTest: XCTestCase {
     }
 
     func test_tableViewCellReuseIdentifier_shoudlBeBrewCell() {
+        let sut = makeSut(brews: makeBrews())
+        
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
 
         XCTAssertEqual(cell?.reuseIdentifier, "BrewCell")
@@ -73,7 +76,9 @@ class BrewListViewControllerTest: XCTestCase {
     
     
     func test_brewCell_shouldHaveOutletsConnected() {
-        let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
+        let sut = makeSut(brews: makeBrews())
+
+        let cell = cellForRow(in:sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
         
         XCTAssertNotNil(cell?.nameLabel, "nameLabel")
         XCTAssertNotNil(cell?.taglineLabel, "taglineLabel")
@@ -85,6 +90,8 @@ class BrewListViewControllerTest: XCTestCase {
     }
 
     func test_tableViewCellForRow0_ShouldCallCellConfiguration() {
+        let sut = makeSut(brews: makeBrews())
+
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
 
         XCTAssertEqual(cell?.nameLabel.text, "B1")
@@ -95,35 +102,48 @@ class BrewListViewControllerTest: XCTestCase {
         XCTAssertEqual(cell?.targetFgLabel.text, "1010")
         XCTAssertEqual(cell?.targetOgLabel.text, "1044")
     }
-    
-    func test_tableViewCellForRow0WithNoViewModel_ShouldSetEmptyLabels() {
-        let sut = BrewListViewController()
-        sut.loadViewIfNeeded()
-        let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
-        
-        XCTAssertEqual(cell?.nameLabel.text, "")
-        XCTAssertEqual(cell?.taglineLabel.text, "")
-        XCTAssertEqual(cell?.abvLabel.text, "")
-        XCTAssertEqual(cell?.ibuLabel.text, "")
-        XCTAssertEqual(cell?.targetFgLabel.text, "")
-        XCTAssertEqual(cell?.targetOgLabel.text, "")
-    }
-    
+
     func test_brewCellWithInvalidImage_shouldsetDefaultImage() {
+        let sut = makeSut(brews: makeBrews())
+
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0)) as? BrewCell
         
         XCTAssertEqual(cell?.brewImageView.image, UIImage.remove)
     }
     
     func test_brewCellWithValidImage_shouldsetDefaultImage() {
+        let sut = makeSut(brews: makeBrews())
+
         let cell = cellForRow(in: sut.tableView, indexPath: IndexPath(row: 2, section: 0)) as? BrewCell
         
         XCTAssertNotNil(cell?.brewImageView.image)
         XCTAssertNotEqual(cell?.brewImageView.image, UIImage.remove)
     }
+    
+    func test_didSelectRow0_shouldCallSelectedCallback() {
+        var selectionCalled = false
+        let sut = makeSut() { _ in
+            selectionCalled = true
+        }
+
+        didSelectRowAt(in: sut.tableView, indexPath: IndexPath(row: 0, section: 0))
+
+        XCTAssertTrue(selectionCalled, "selectionCalled")
+    }
 
     
     // MARK: - Helpers
+    private func makeSutWithNoViewModel() -> BrewListViewController {
+        let sut = BrewListViewController()
+        sut.loadViewIfNeeded()
+        return sut
+    }
+    
+    private func makeSut(brews: [Brew] = [], selection: @escaping (Int) -> Void = { _ in }) -> BrewListViewController {
+        let sut = BrewListViewController(viewModel: makeViewModel(brews), selection: selection)
+        sut.loadViewIfNeeded()
+        return sut
+    }
     
     private func getImageFromURL(urlString: String) -> UIImage? {
         if let url = URL(string: urlString),

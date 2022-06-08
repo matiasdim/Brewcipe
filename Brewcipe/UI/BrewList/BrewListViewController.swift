@@ -13,11 +13,13 @@ class BrewListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private(set) var viewModel: BrewListViewModel?
+    private var selection: ((Int) -> Void)?
     let brewCellClassName = String(describing: BrewCell.self)
     
-    convenience init(viewModel: BrewListViewModel) {
+    convenience init(viewModel: BrewListViewModel, selection: @escaping (Int) -> Void) {
         self.init()
         self.viewModel = viewModel
+        self.selection = selection
     }
 
     override func viewDidLoad() {
@@ -40,18 +42,18 @@ extension BrewListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewCellClassName) as? BrewCell else {
-            fatalError("Brew cell was not found")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewCellClassName) as? BrewCell, let viewModel = viewModel else {
+            fatalError("Brew cell was not found, or view model notset")
         }
         
         let index = indexPath.row
-        cell.configure(name: viewModel?.name(for: index) ?? "",
-                       tagline: viewModel?.tagline(for: index) ?? "",
-                       abv: viewModel?.abv(for: index) ?? "",
-                       ibu: viewModel?.ibu(for: index) ?? "",
-                       targetFg: viewModel?.targetFg(for: index) ?? "",
-                       targetOg: viewModel?.targetOg(for: index) ?? "",
-                       brewImageURL: viewModel?.imageUrl(for: index) ?? "")
+        cell.configure(name: viewModel.name(for: index),
+                       tagline: viewModel.tagline(for: index),
+                       abv: viewModel.abv(for: index),
+                       ibu: viewModel.ibu(for: index),
+                       targetFg: viewModel.targetFg(for: index),
+                       targetOg: viewModel.targetOg(for: index),
+                       brewImageURL: viewModel.imageUrl(for: index))
         
         return cell
     }
@@ -62,7 +64,7 @@ extension BrewListViewController: UITableViewDelegate {
         return UITableView.automaticDimension
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selection?(indexPath.row)
+    }
 }

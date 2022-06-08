@@ -19,7 +19,7 @@ class NavigationControllerRouterTests: XCTestCase {
         super.setUp()
         factory = ViewControllerFactoryStub()
         brew = Brew(name: "B1", tagline: "T1", imageUrl: nil, abv: 9.2, ibu: 90, targetFg: 900, targetOg: 890)
-        navigationController = NonAnimatedNavigationController(rootViewController: factory.brewsViewController(for: []))
+        navigationController = NonAnimatedNavigationController()
         sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
     }
     
@@ -35,12 +35,17 @@ class NavigationControllerRouterTests: XCTestCase {
         XCTAssertNotNil(sut.navigationController)
         XCTAssertNotNil(sut.factory)
     }
-
+    
+    func test_brewList_shouldPushBrewsViewController () {
+        sut.brewList([])
         
-    func test_selectedBrew_shouldShowBrewDetailViewController() {
+        XCTAssertEqual(sut.navigationController.viewControllers.count, 1)
+    }
+
+    func test_selectedBrew_shouldPushBrewDetailViewController() {
         sut.selected(brew)
         
-        XCTAssertEqual(sut.navigationController.viewControllers.count, 2)
+        XCTAssertEqual(sut.navigationController.viewControllers.count, 1)
     }
     
     func test_showRecipeDetailFoBrew_shouldShowRecipeViewModally() {
@@ -68,14 +73,14 @@ class NavigationControllerRouterTests: XCTestCase {
     }
     
     private class ViewControllerFactoryStub: ViewControllerFactory {
-        func recipeViewController(for recipe: String) -> UIViewController {
+        func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController {
             UIViewController()
         }
         
-        func brewsViewController(for brews: [Brew]) -> UIViewController {
-            return UIViewController()
+        func recipeViewController(for recipe: String) -> UIViewController {
+            UIViewController()
         }
-        
+
         func brewDetailViewController(for brew: Brew) -> UIViewController {
             return UIViewController()
         }

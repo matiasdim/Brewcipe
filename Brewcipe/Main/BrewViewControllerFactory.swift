@@ -8,9 +8,13 @@
 import UIKit
 
 struct BrewViewControllerFactory: ViewControllerFactory {
-    func brewsViewController(for brews: [Brew]) -> UIViewController {
+    func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController {
         let vm = BrewListViewModel(brews: brews)
-        return BrewListViewController(viewModel: vm)
+        return BrewListViewController(viewModel: vm, selection: { index in
+            if brews.count < index {
+                selection(brews[index])
+            }
+        })
     }
     
     func brewDetailViewController(for brew: Brew) -> UIViewController {

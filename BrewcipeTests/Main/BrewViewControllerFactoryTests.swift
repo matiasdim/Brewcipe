@@ -12,14 +12,14 @@ class BrewViewControllerFactoryTests: XCTestCase {
     
     func test_brewsViewController_shouldReturnBrewListViewController() {
         let sut = makeSUT()
-        let brewListVC = sut.brewsViewController(for: []) as? BrewListViewController
+        let brewListVC = sut.brewsViewController(for: [], selection: {_ in }) as? BrewListViewController
 
         XCTAssertNotNil(brewListVC, "brewListVC")
     }
     
     func test_brewsViewController_createsControllerWithViewModel() {
         let sut = BrewViewControllerFactory()
-        let brewListVC = sut.brewsViewController(for: []) as? BrewListViewController
+        let brewListVC = sut.brewsViewController(for: [], selection: {_ in }) as? BrewListViewController
          
         XCTAssertNotNil(brewListVC?.viewModel)
     }
