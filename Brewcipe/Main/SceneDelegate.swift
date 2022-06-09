@@ -12,6 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     private lazy var navigationController = UINavigationController()
+    private lazy var factory = BrewViewControllerFactory()
+    private lazy var router = NavigationControllerRouter(navigationController: navigationController, factory: factory)
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene  = (scene as? UIWindowScene) else { return }
@@ -24,8 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func start() {
-        let factory = BrewViewControllerFactory()
-        let router = NavigationControllerRouter(navigationController: navigationController, factory: factory)
         router.brewList([Brew(name: "a", tagline: "a", imageUrl: nil, abv: 0, ibu: 0, targetFg: 0, targetOg: 0)]) // TODO: Remove beer
     }
 }

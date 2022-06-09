@@ -8,14 +8,22 @@
 import Foundation
 import UIKit
 
-struct NavigationControllerRouter {
+class NavigationControllerRouter {
     private(set) var navigationController: UINavigationController
     private(set) var factory: ViewControllerFactory
     
+    lazy var brewListSelectionCallback: (Brew) -> Void = { [weak self] in
+        self?.selected($0)
+        
+    }
+    
+    init(navigationController: UINavigationController, factory: ViewControllerFactory) {
+        self.navigationController = navigationController
+        self.factory = factory
+    }
+    
     func brewList(_ brews: [Brew]) {
-        navigationController.pushViewController(factory.brewsViewController(for: brews) { brew in
-            selected(brew)
-        }, animated: true)
+        navigationController.pushViewController(factory.brewsViewController(for: brews, selection: brewListSelectionCallback), animated: true)
     }
     
     func selected(_ brew: Brew) {

@@ -18,10 +18,21 @@ class BrewViewControllerFactoryTests: XCTestCase {
     }
     
     func test_brewsViewController_createsControllerWithViewModel() {
-        let sut = BrewViewControllerFactory()
+        let sut = makeSUT()
         let brewListVC = sut.brewsViewController(for: [], selection: {_ in }) as? BrewListViewController
          
         XCTAssertNotNil(brewListVC?.viewModel)
+    }
+    
+    func test_brewsViewController_itemIsSelected_shouldFireCallback() {
+        let sut = makeSUT()
+        var callbackWasFired = false
+        let brewListVC = sut.brewsViewController(for: [makeBrew()], selection: { _ in callbackWasFired = true }) as! BrewListViewController
+        brewListVC.loadViewIfNeeded()
+        
+        brewListVC.tableView(brewListVC.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        
+        XCTAssertTrue(callbackWasFired)
     }
     
     func test_brewDetailViewController_shouldReturnBrewDetailViewController() {

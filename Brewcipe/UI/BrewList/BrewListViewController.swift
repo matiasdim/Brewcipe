@@ -13,7 +13,7 @@ class BrewListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private(set) var viewModel: BrewListViewModel?
-    private var selection: ((Int) -> Void)?
+    private(set) var selection: ((Int) -> Void)?
     let brewCellClassName = String(describing: BrewCell.self)
     
     convenience init(viewModel: BrewListViewModel, selection: @escaping (Int) -> Void) {
@@ -42,11 +42,18 @@ extension BrewListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewCellClassName) as? BrewCell, let viewModel = viewModel else {
-            fatalError("Brew cell was not found, or view model notset")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewCellClassName) as? BrewCell else {
+            fatalError("Brew cell was not found")
         }
+        configure(cell, forRow: indexPath.row)
         
-        let index = indexPath.row
+        return cell
+    }
+    
+    private func configure(_ cell: BrewCell, forRow index: Int) {
+        guard  let viewModel = viewModel else {
+            fatalError("ViewModel not set")
+        }
         cell.configure(name: viewModel.name(for: index),
                        tagline: viewModel.tagline(for: index),
                        abv: viewModel.abv(for: index),
@@ -54,8 +61,6 @@ extension BrewListViewController: UITableViewDataSource {
                        targetFg: viewModel.targetFg(for: index),
                        targetOg: viewModel.targetOg(for: index),
                        brewImageURL: viewModel.imageUrl(for: index))
-        
-        return cell
     }
 }
 

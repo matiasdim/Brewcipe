@@ -36,10 +36,32 @@ class NavigationControllerRouterTests: XCTestCase {
         XCTAssertNotNil(sut.factory)
     }
     
+    func test_navigationControllerRouter_brewListSelectionCallback_shouldPushBrewDetailViewController() {
+        XCTAssertEqual(navigationController.viewControllers.count, 0)
+        
+        sut.brewListSelectionCallback(brew)
+        
+        XCTAssertEqual(navigationController.viewControllers.count, 1)
+        
+        
+    }
+    
     func test_brewList_shouldPushBrewsViewController () {
         sut.brewList([])
         
         XCTAssertEqual(sut.navigationController.viewControllers.count, 1)
+    }
+    
+    func test_brewList_callback_shouldPushBrewDetailViewController () {
+        var selectionCallbackFired = false
+        sut.brewListSelectionCallback = { _ in
+            selectionCallbackFired = true
+        }
+        sut.brewList([brew])
+        
+        factory.selectionCallback(brew)
+
+        XCTAssertTrue(selectionCallbackFired)
     }
 
     func test_selectedBrew_shouldPushBrewDetailViewController() {
@@ -73,8 +95,12 @@ class NavigationControllerRouterTests: XCTestCase {
     }
     
     private class ViewControllerFactoryStub: ViewControllerFactory {
+        
+        var selectionCallback: ((Brew) -> Void)!
+        
         func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController {
-            UIViewController()
+            selectionCallback = selection
+            return UIViewController()
         }
         
         func recipeViewController(for recipe: String) -> UIViewController {

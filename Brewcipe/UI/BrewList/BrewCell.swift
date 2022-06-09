@@ -22,7 +22,7 @@ class BrewCell: UITableViewCell {
                    ibu: String,
                    targetFg: String,
                    targetOg: String,
-                   brewImageURL: String) {
+                   brewImageURL: String?) {
         nameLabel.text = name
         taglineLabel.text = tagline
         abvLabel.text = abv
@@ -33,8 +33,9 @@ class BrewCell: UITableViewCell {
         setImage(from: brewImageURL)
     }
     
-    private func setImage(from src: String) {
-        if let url = URL(string: src), let data = try? Data(contentsOf: url) {
+    private func setImage(from src: String?) {
+        // TODO: Remove DATA from here.
+        if let src = src, let url = URL(string: src), let data = try? Data(contentsOf: url) {
             // Create Image and Update Image View
             brewImageView.image = UIImage(data: data)
         } else {

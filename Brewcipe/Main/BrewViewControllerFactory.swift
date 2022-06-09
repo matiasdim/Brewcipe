@@ -7,14 +7,16 @@
 
 import UIKit
 
-struct BrewViewControllerFactory: ViewControllerFactory {
+class BrewViewControllerFactory: ViewControllerFactory {
     func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController {
         let vm = BrewListViewModel(brews: brews)
-        return BrewListViewController(viewModel: vm, selection: { index in
-            if brews.count < index {
+        let vc = BrewListViewController(viewModel: vm, selection: { index in
+            if index < brews.count {
                 selection(brews[index])
             }
         })
+        
+        return vc
     }
     
     func brewDetailViewController(for brew: Brew) -> UIViewController {
@@ -25,4 +27,7 @@ struct BrewViewControllerFactory: ViewControllerFactory {
     func recipeViewController(for recipe: String) -> UIViewController {
         return RecipeViewController(recipe: recipe)
     }
+    
+    
+    
 }
