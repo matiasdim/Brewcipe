@@ -14,7 +14,6 @@ class NavigationControllerRouter {
     
     lazy var brewListSelectionCallback: (Brew) -> Void = { [weak self] in
         self?.selected($0)
-        
     }
     
     init(navigationController: UINavigationController, factory: ViewControllerFactory) {

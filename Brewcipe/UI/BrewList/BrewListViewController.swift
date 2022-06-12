@@ -14,6 +14,7 @@ class BrewListViewController: UIViewController {
     
     private(set) var viewModel: BrewListViewModel?
     private(set) var selection: ((Int) -> Void)?
+    
     let brewCellClassName = String(describing: BrewCell.self)
     
     convenience init(viewModel: BrewListViewModel, selection: @escaping (Int) -> Void) {
@@ -54,13 +55,14 @@ extension BrewListViewController: UITableViewDataSource {
         guard  let viewModel = viewModel else {
             fatalError("ViewModel not set")
         }
+        
         cell.configure(name: viewModel.name(for: index),
                        tagline: viewModel.tagline(for: index),
                        abv: viewModel.abv(for: index),
                        ibu: viewModel.ibu(for: index),
                        targetFg: viewModel.targetFg(for: index),
                        targetOg: viewModel.targetOg(for: index),
-                       brewImageURL: viewModel.imageUrl(for: index))
+                       brewImage: viewModel.brewImage(for: index))
     }
 }
 

@@ -10,12 +10,12 @@ import XCTest
 
 class BrewListViewModelTests: XCTestCase {
     private var brews: [Brew]!
-    private var sut: BrewListViewModel!
+    private var sut: TestableBrewListViewModel!
     
     override func setUp() {
         super.setUp()
         brews = makeBrews()
-        sut = BrewListViewModel(brews: brews)
+        sut = TestableBrewListViewModel(brews: brews)
     }
     
     override func tearDown() {
@@ -51,13 +51,35 @@ class BrewListViewModelTests: XCTestCase {
             XCTAssertEqual(sut.targetOg(for: index), String(brews[index].targetOg))
         }
     }
+    
+    func test_viewModel_shouldReturnImageFromValidURL() {
+        let image = sut.brewImage(for: 0)
+        
+        XCTAssertNotNil(image)
+    }
+    
+    func test_viewModel_invalidImageURL_shouldReturnRemoveImageAsDefault() {
+        let image = sut.brewImage(for: 1)
+        
+        XCTAssertEqual(image, .remove)
+    }
 
     // MARK: - Helpers
+    
+    private class TestableBrewListViewModel: BrewListViewModel {
+        var imageURL: String? = nil
+        
+        override func imageUrl(for row: Int) -> String? {
+            imageURL = super.imageUrl(for: row)
+            
+            return imageURL
+        }
+    }
     
     private func makeBrews() -> [Brew] {        
         return [Brew(name: "B1",
                      tagline: "T1",
-                     imageUrl: "http://dummy.com",
+                     imageUrl: "https://images.punkapi.com/v2/keg.png",
                      abv: 3.2,
                      ibu: 250,
                      targetFg: 1010,
