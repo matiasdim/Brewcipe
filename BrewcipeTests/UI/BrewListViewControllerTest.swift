@@ -166,20 +166,23 @@ class BrewListViewControllerTest: XCTestCase {
                      abv: 3.2,
                      ibu: 250,
                      targetFg: 1010,
-                     targetOg: 1044),
+                     targetOg: 1044,
+                     volume: 20),
                 Brew(name: "B2",
                      tagline: "T2",
                      imageUrl: nil,
                      abv: 7.2,
                      ibu: 198,
                      targetFg: 190,
-                     targetOg: 570),
+                     targetOg: 570,
+                     volume: 20),
                 Brew(name: "B3",
                      tagline: "T3",
                      imageUrl: "https://images.punkapi.com/v2/keg.png",
                      abv: 9,
                      ibu: 200,
                      targetFg: 570,
-                     targetOg: 800)]
+                     targetOg: 800,
+                     volume: 20)]
     }
 }

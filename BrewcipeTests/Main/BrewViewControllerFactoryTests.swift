@@ -71,7 +71,7 @@ class BrewViewControllerFactoryTests: XCTestCase {
     }
     
     private func makeBrew() -> Brew {
-        Brew(name: "Brew", tagline: "tagline", imageUrl: nil, abv: 0.0, ibu: 0, targetFg: 0, targetOg: 0)
+        Brew(name: "Brew", tagline: "tagline", imageUrl: nil, abv: 0.0, ibu: 0, targetFg: 0, targetOg: 0, volume: 20)
     }
     
     private func makeRecipeDetail() -> String {

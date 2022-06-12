@@ -13,4 +13,5 @@ struct Brew {
     let ibu: Int
     let targetFg: Int
     let targetOg: Int
+    let volume: Int
 }

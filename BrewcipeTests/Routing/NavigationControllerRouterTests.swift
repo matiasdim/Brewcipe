@@ -18,7 +18,7 @@ class NavigationControllerRouterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         factory = ViewControllerFactoryStub()
-        brew = Brew(name: "B1", tagline: "T1", imageUrl: nil, abv: 9.2, ibu: 90, targetFg: 900, targetOg: 890)
+        brew = Brew(name: "B1", tagline: "T1", imageUrl: nil, abv: 9.2, ibu: 90, targetFg: 900, targetOg: 890, volume: 20)
         navigationController = NonAnimatedNavigationController()
         sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
     }

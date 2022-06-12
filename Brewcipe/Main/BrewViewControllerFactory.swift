@@ -20,7 +20,7 @@ class BrewViewControllerFactory: ViewControllerFactory {
     }
     
     func brewDetailViewController(for brew: Brew) -> UIViewController {
-        let vm = BrewDetailViewModel()
+        let vm = BrewDetailViewModel(brew: brew)
         return BrewDetailViewController(viewModel: vm)
     }
     

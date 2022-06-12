@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func start() {
-        router.brewList([Brew(name: "a", tagline: "a", imageUrl: nil, abv: 0, ibu: 0, targetFg: 0, targetOg: 0)]) // TODO: Remove beer
+        router.brewList([Brew(name: "a", tagline: "a", imageUrl: nil, abv: 0, ibu: 0, targetFg: 0, targetOg: 0, volume: 20)]) // TODO: Remove beer
     }
 }
 

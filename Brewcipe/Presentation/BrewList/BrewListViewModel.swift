@@ -8,7 +8,7 @@
 import UIKit
 
 class BrewListViewModel {
-    let brews: [Brew]
+    private let brews: [Brew]
     
     let listTitle = "Brews"
     let numberOfSections = 1
@@ -50,7 +50,7 @@ class BrewListViewModel {
             let url = URL(string: src),
             let data = try? Data(contentsOf: url),
            let image = UIImage(data: data)
-        {        
+        {
             return image
         }
         

@@ -19,13 +19,13 @@ class BrewListViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        brews = []
+        brews = nil
         sut = nil
         super.tearDown()
     }
 
     func test_viewModel_shouldHaveBrewsModel() {
-        XCTAssertNotNil(sut.brews)
+        XCTAssertNotNil(sut.arrayOfBrews)
     }
     
     func test_viewModel_shouldProvideListTitle() {
@@ -68,6 +68,13 @@ class BrewListViewModelTests: XCTestCase {
     
     private class TestableBrewListViewModel: BrewListViewModel {
         var imageURL: String? = nil
+        var arrayOfBrews: [Brew]
+        
+        override init(brews: [Brew]) {
+            arrayOfBrews = brews
+            super.init(brews: brews)
+        }
+        
         
         override func imageUrl(for row: Int) -> String? {
             imageURL = super.imageUrl(for: row)
@@ -83,21 +90,24 @@ class BrewListViewModelTests: XCTestCase {
                      abv: 3.2,
                      ibu: 250,
                      targetFg: 1010,
-                     targetOg: 1044),
+                     targetOg: 1044,
+                     volume: 20),
                 Brew(name: "B2",
                      tagline: "T2",
                      imageUrl: nil,
                      abv: 7.2,
                      ibu: 198,
                      targetFg: 190,
-                     targetOg: 570),
+                     targetOg: 570,
+                     volume: 20),
                 Brew(name: "B3",
                      tagline: "T3",
                      imageUrl: "http://dummy3.com",
                      abv: 9,
                      ibu: 200,
                      targetFg: 570,
-                     targetOg: 800)]
+                     targetOg: 800,
+                     volume: 20)]
     }
 
 }
