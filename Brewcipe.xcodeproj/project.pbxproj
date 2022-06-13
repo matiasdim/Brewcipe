@@ -18,6 +18,10 @@
 		1328E5C728483BAA001527FB /* Brew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C628483BAA001527FB /* Brew.swift */; };
 		1328E5C928483D16001527FB /* BrewListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */; };
 		132EEA132857E1D30084F840 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA122857E1D30084F840 /* DictionaryExtensions.swift */; };
+		132EEA182857E6690084F840 /* BrewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA172857E6690084F840 /* BrewCellTests.swift */; };
+		132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1A2857EB950084F840 /* DictionaryExtensionsTests.swift */; };
+		132EEA1D2857ED150084F840 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1C2857ED150084F840 /* StringExtensions.swift */; };
+		132EEA1F2857F0140084F840 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */; };
 		1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */; };
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
@@ -57,6 +61,10 @@
 		1328E5C628483BAA001527FB /* Brew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brew.swift; sourceTree = "<group>"; };
 		1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewControllerTest.swift; sourceTree = "<group>"; };
 		132EEA122857E1D30084F840 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		132EEA172857E6690084F840 /* BrewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCellTests.swift; sourceTree = "<group>"; };
+		132EEA1A2857EB950084F840 /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
+		132EEA1C2857ED150084F840 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewController.swift; sourceTree = "<group>"; };
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
@@ -125,6 +133,7 @@
 		1307A41128481D8900083298 /* BrewcipeTests */ = {
 			isa = PBXGroup;
 			children = (
+				132EEA192857EB0A0084F840 /* Extensions */,
 				13E61A31284D15500014E42C /* Main */,
 				13E61A30284A86A20014E42C /* Presentation */,
 				13E61A2E284A86920014E42C /* Routing */,
@@ -138,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				132EEA122857E1D30084F840 /* DictionaryExtensions.swift */,
+				132EEA1C2857ED150084F840 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,9 +171,19 @@
 		132EEA162857E45C0084F840 /* BrewList */ = {
 			isa = PBXGroup;
 			children = (
+				132EEA172857E6690084F840 /* BrewCellTests.swift */,
 				1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */,
 			);
 			path = BrewList;
+			sourceTree = "<group>";
+		};
+		132EEA192857EB0A0084F840 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				132EEA1A2857EB950084F840 /* DictionaryExtensionsTests.swift */,
+				132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		13E61A27284A85110014E42C /* Domain */ = {
@@ -401,6 +421,7 @@
 				13E61A38284EA2F40014E42C /* BrewDetailViewController.swift in Sources */,
 				13EE357C28496B130058C2F9 /* BrewCell.swift in Sources */,
 				13E61A35284D168D0014E42C /* BrewViewControllerFactory.swift in Sources */,
+				132EEA1D2857ED150084F840 /* StringExtensions.swift in Sources */,
 				13E61A3E284EA4460014E42C /* RecipeViewController.swift in Sources */,
 				1307A3FE28481D8500083298 /* SceneDelegate.swift in Sources */,
 				13E61A3B284EA3340014E42C /* BrewDetailViewModel.swift in Sources */,
@@ -412,9 +433,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132EEA1F2857F0140084F840 /* StringExtensionsTests.swift in Sources */,
 				1328E5C928483D16001527FB /* BrewListViewControllerTest.swift in Sources */,
 				13238E3C2856616400FD2529 /* BrewDetailViewModelTests.swift in Sources */,
 				1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */,
+				132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */,
+				132EEA182857E6690084F840 /* BrewCellTests.swift in Sources */,
 				139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */,
 				13E61A42284EA8820014E42C /* BrewViewControllerFactoryTests.swift in Sources */,
 				13EE357A284918190058C2F9 /* TestHelpers.swift in Sources */,

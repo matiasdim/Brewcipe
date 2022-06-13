@@ -46,15 +46,8 @@ class BrewListViewModel {
     }
     
     func brewImage(for row: Int) -> UIImage {
-        if let src = imageUrl(for: row),
-            let url = URL(string: src),
-            let data = try? Data(contentsOf: url),
-           let image = UIImage(data: data)
-        {
-            return image
-        }
-        
-        return .remove
+        let stringURL = imageUrl(for: row)
+        return stringURL?.imagefromURL ?? .remove
     }
     
     // MARK: - Private
