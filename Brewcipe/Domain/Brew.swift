@@ -13,5 +13,11 @@ struct Brew {
     let ibu: Int
     let targetFg: Int
     let targetOg: Int
-    let volume: Int
+    let ebc: Double
+    let srm: Double
+    let ph: Double
+    let attenuationLevel: Double
+    let volume: [Int: String]
+    let boilVolume: [Int: String]
+    let description: String
 }

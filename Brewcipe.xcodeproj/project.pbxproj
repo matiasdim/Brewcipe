@@ -17,6 +17,7 @@
 		1328E5C528483B88001527FB /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C428483B88001527FB /* ViewControllerFactory.swift */; };
 		1328E5C728483BAA001527FB /* Brew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C628483BAA001527FB /* Brew.swift */; };
 		1328E5C928483D16001527FB /* BrewListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */; };
+		132EEA132857E1D30084F840 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA122857E1D30084F840 /* DictionaryExtensions.swift */; };
 		1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */; };
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
@@ -55,6 +56,7 @@
 		1328E5C428483B88001527FB /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		1328E5C628483BAA001527FB /* Brew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brew.swift; sourceTree = "<group>"; };
 		1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewControllerTest.swift; sourceTree = "<group>"; };
+		132EEA122857E1D30084F840 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
 		1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewController.swift; sourceTree = "<group>"; };
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				1307A40928481D8900083298 /* Info.plist */,
 				1307A40428481D8900083298 /* Assets.xcassets */,
 				13E61A27284A85110014E42C /* Domain */,
+				132EEA112857E1BB0084F840 /* Extensions */,
 				13E61A2A284A85580014E42C /* Main */,
 				13E61A28284A852A0014E42C /* Presentation */,
 				13E61A2B284A856E0014E42C /* Routing */,
@@ -129,6 +132,38 @@
 				13EE3579284918190058C2F9 /* TestHelpers.swift */,
 			);
 			path = BrewcipeTests;
+			sourceTree = "<group>";
+		};
+		132EEA112857E1BB0084F840 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				132EEA122857E1D30084F840 /* DictionaryExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		132EEA142857E3E80084F840 /* BrewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				13238E3B2856616400FD2529 /* BrewDetailViewModelTests.swift */,
+			);
+			path = BrewDetail;
+			sourceTree = "<group>";
+		};
+		132EEA152857E3F40084F840 /* BrewList */ = {
+			isa = PBXGroup;
+			children = (
+				139ABE022848F99200256137 /* BrewListViewModelTests.swift */,
+			);
+			path = BrewList;
+			sourceTree = "<group>";
+		};
+		132EEA162857E45C0084F840 /* BrewList */ = {
+			isa = PBXGroup;
+			children = (
+				1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */,
+			);
+			path = BrewList;
 			sourceTree = "<group>";
 		};
 		13E61A27284A85110014E42C /* Domain */ = {
@@ -207,7 +242,7 @@
 		13E61A2F284A869A0014E42C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1328E5C828483D16001527FB /* BrewListViewControllerTest.swift */,
+				132EEA162857E45C0084F840 /* BrewList */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -215,8 +250,8 @@
 		13E61A30284A86A20014E42C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				139ABE022848F99200256137 /* BrewListViewModelTests.swift */,
-				13238E3B2856616400FD2529 /* BrewDetailViewModelTests.swift */,
+				132EEA142857E3E80084F840 /* BrewDetail */,
+				132EEA152857E3F40084F840 /* BrewList */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -359,6 +394,7 @@
 			files = (
 				1307A42E28481F1800083298 /* NavigationControllerRouter.swift in Sources */,
 				139ABE052848F9AB00256137 /* BrewListViewModel.swift in Sources */,
+				132EEA132857E1D30084F840 /* DictionaryExtensions.swift in Sources */,
 				1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */,
 				1328E5C528483B88001527FB /* ViewControllerFactory.swift in Sources */,
 				1307A3FC28481D8500083298 /* AppDelegate.swift in Sources */,

@@ -28,7 +28,33 @@ struct BrewDetailViewModel {
         return String(brew.targetOg)
     }
     
-    var volume: String {
-        return String(brew.volume)
+    var ebc: String {
+        return String(brew.ebc)
     }
+    
+    var srm: String {
+        return String(brew.srm)
+    }
+   
+    var ph: String {
+        return String(brew.ph)
+    }
+    
+    var attenuationLevel: String {
+        return String(brew.attenuationLevel)
+    }
+    
+    var volume: String? {
+        return brew.volume.keyAndValueConcatenated()
+    }
+    
+    var boilVolume: String? {
+        return brew.boilVolume.keyAndValueConcatenated()
+
+    }
+    
+    var description: String {
+        return brew.description
+    }
+    
 }

@@ -28,6 +28,11 @@ class BrewListViewController: UIViewController {
         
         title = viewModel?.listTitle
         
+        setupTable()
+    }
+    
+    // MARK: - private
+    private func setupTable() {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: brewCellClassName, bundle: nil), forCellReuseIdentifier: brewCellClassName)
     }
