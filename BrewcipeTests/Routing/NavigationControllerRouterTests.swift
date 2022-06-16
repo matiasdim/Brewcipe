@@ -49,6 +49,10 @@ class NavigationControllerRouterTests: XCTestCase {
         XCTAssertNotNil(sut.factory)
     }
     
+    func test_navigationController_shouldPreferLargeTitles() {
+        XCTAssertTrue(sut.navigationController.navigationBar.prefersLargeTitles)
+    }
+    
     func test_navigationControllerRouter_brewListSelectionCallback_shouldPushBrewDetailViewController() {
         XCTAssertEqual(navigationController.viewControllers.count, 0)
         

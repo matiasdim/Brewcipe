@@ -18,6 +18,7 @@ class NavigationControllerRouter {
     
     init(navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
+        navigationController.navigationBar.prefersLargeTitles = true
         self.factory = factory
     }
     

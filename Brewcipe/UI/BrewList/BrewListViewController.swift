@@ -10,7 +10,7 @@ import UIKit
 
 class BrewListViewController: UIViewController {
         
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private(set) weak var tableView: UITableView!
     
     private(set) var viewModel: BrewListViewModel?
     private(set) var selection: ((Int) -> Void)?

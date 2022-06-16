@@ -34,6 +34,8 @@
 		13EE357A284918190058C2F9 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE3579284918190058C2F9 /* TestHelpers.swift */; };
 		13EE357C28496B130058C2F9 /* BrewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE357B28496B130058C2F9 /* BrewCell.swift */; };
 		13EE358028496DC40058C2F9 /* BrewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EE357F28496DC40058C2F9 /* BrewCell.xib */; };
+		13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */; };
+		13FEA5FD285928B6007C0A77 /* BrewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		13EE3579284918190058C2F9 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		13EE357B28496B130058C2F9 /* BrewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCell.swift; sourceTree = "<group>"; };
 		13EE357F28496DC40058C2F9 /* BrewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewCell.xib; sourceTree = "<group>"; };
+		13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailViewControllerTests.swift; sourceTree = "<group>"; };
+		13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 		13E61A2F284A869A0014E42C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				13FEA5F928592603007C0A77 /* BrewDetail */,
 				132EEA162857E45C0084F840 /* BrewList */,
 			);
 			path = UI;
@@ -289,6 +294,7 @@
 			children = (
 				13E61A3C284EA4340014E42C /* Recipe */,
 				13E61A37284EA2F40014E42C /* BrewDetailViewController.swift */,
+				13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */,
 			);
 			path = BrewDetail;
 			sourceTree = "<group>";
@@ -307,6 +313,14 @@
 				13E61A3D284EA4460014E42C /* RecipeViewController.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		13FEA5F928592603007C0A77 /* BrewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */,
+			);
+			path = BrewDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +407,7 @@
 			files = (
 				13EE358028496DC40058C2F9 /* BrewCell.xib in Resources */,
 				1307A40828481D8900083298 /* LaunchScreen.storyboard in Resources */,
+				13FEA5FD285928B6007C0A77 /* BrewDetailViewController.xib in Resources */,
 				1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */,
 				1307A40528481D8900083298 /* Assets.xcassets in Resources */,
 			);
@@ -438,6 +453,7 @@
 				13238E3C2856616400FD2529 /* BrewDetailViewModelTests.swift in Sources */,
 				1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */,
 				132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */,
+				13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */,
 				132EEA182857E6690084F840 /* BrewCellTests.swift in Sources */,
 				139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */,
 				13E61A42284EA8820014E42C /* BrewViewControllerFactoryTests.swift in Sources */,
