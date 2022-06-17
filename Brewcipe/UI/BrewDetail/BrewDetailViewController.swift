@@ -5,6 +5,9 @@
 //  Created by Matías  Gil Echavarría on 6/06/22.
 //
 
+/// TODO: Missing
+#warning("Missing to add labels for each value, description label and button to open ingredients. Also confifure image")
+
 import UIKit
 
 class BrewDetailViewController: UIViewController {
@@ -21,6 +24,8 @@ class BrewDetailViewController: UIViewController {
     @IBOutlet private(set) weak var volumeLabel: UILabel!
     @IBOutlet private(set) weak var boilVolumeLabel: UILabel!
     
+    
+    
     convenience init(viewModel: BrewDetailViewModel) {
         self.init()
         self.viewModel = viewModel
@@ -31,5 +36,21 @@ class BrewDetailViewController: UIViewController {
         
         navigationItem.largeTitleDisplayMode = .never
         title = viewModel?.title
+        
+        setupLabels()
+    }
+    
+    // MARK: - private
+    private func setupLabels() {
+        abvLabel.text = viewModel?.abv
+        ibuLabel.text = viewModel?.ibu
+        targetFgLabel.text = viewModel?.targetFg
+        targetOgLabel.text = viewModel?.targetOg
+        ebcLabel.text = viewModel?.ebc
+        srmLabel.text = viewModel?.srm
+        phLabel.text = viewModel?.ph
+        attenuationLevelLabel.text = viewModel?.attenuationLevel
+        volumeLabel.text = viewModel?.volume
+        boilVolumeLabel.text = viewModel?.boilVolume
     }
 }

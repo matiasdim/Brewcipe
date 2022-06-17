@@ -43,6 +43,21 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.largeTitleDisplayMode,  UINavigationItem.LargeTitleDisplayMode.never)
     }
     
+    func test_brewDetailViewController_shouldSetLabesWHenLoadView() {
+        let sut = makeSut(brew: makeBrew())
+        
+        XCTAssertEqual(sut.abvLabel.text, "3.2")
+        XCTAssertEqual(sut.ibuLabel.text, "250")
+        XCTAssertEqual(sut.targetFgLabel.text, "1010")
+        XCTAssertEqual(sut.targetOgLabel.text, "1044")
+        XCTAssertEqual(sut.ebcLabel.text, "19.5")
+        XCTAssertEqual(sut.srmLabel.text, "9.9")
+        XCTAssertEqual(sut.phLabel.text, "4.4")
+        XCTAssertEqual(sut.attenuationLevelLabel.text, "75.6")
+        XCTAssertEqual(sut.volumeLabel.text, "20 litres")
+        XCTAssertEqual(sut.boilVolumeLabel.text, "25 litres")
+    }
+    
     // MARK: - Helpers
     private func makeSutWithNoViewModel() -> BrewDetailViewController {
         let sut = BrewDetailViewController()
