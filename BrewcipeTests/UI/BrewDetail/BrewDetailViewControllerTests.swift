@@ -19,7 +19,6 @@ class BrewDetailViewControllerTests: XCTestCase {
     func test_brewDetailViewController_shouldHaveOutletsConnected() {
         let sut = makeSut(brew: makeBrew())
 
-        XCTAssertNotNil(sut.titleLabel)
         XCTAssertNotNil(sut.abvLabel)
         XCTAssertNotNil(sut.ibuLabel)
         XCTAssertNotNil(sut.targetFgLabel)
@@ -36,6 +35,12 @@ class BrewDetailViewControllerTests: XCTestCase {
         let sut = makeSut(brew: makeBrew())
         
         XCTAssertEqual(sut.title, "B1")
+    }
+    
+    func test_brewDetailViewController_shouldNeverDisplayLargeTitle() {
+        let sut = makeSut(brew: makeBrew())
+        
+        XCTAssertEqual(sut.navigationItem.largeTitleDisplayMode,  UINavigationItem.LargeTitleDisplayMode.never)
     }
     
     // MARK: - Helpers

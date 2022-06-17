@@ -10,7 +10,6 @@ import UIKit
 class BrewDetailViewController: UIViewController {
     private(set) var viewModel: BrewDetailViewModel?
     
-    @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var abvLabel: UILabel!
     @IBOutlet private(set) weak var ibuLabel: UILabel!
     @IBOutlet private(set) weak var targetFgLabel: UILabel!
@@ -30,6 +29,7 @@ class BrewDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
         title = viewModel?.title
     }
 }
