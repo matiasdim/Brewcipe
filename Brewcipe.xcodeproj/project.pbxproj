@@ -26,16 +26,20 @@
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
 		139ABE052848F9AB00256137 /* BrewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE042848F9AB00256137 /* BrewListViewModel.swift */; };
+		13C511FE285D03C900C7803C /* IngredientsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C511FD285D03C900C7803C /* IngredientsViewModelTests.swift */; };
+		13C51200285D047700C7803C /* IngredientsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C511FF285D047700C7803C /* IngredientsViewModel.swift */; };
 		13E61A35284D168D0014E42C /* BrewViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A34284D168D0014E42C /* BrewViewControllerFactory.swift */; };
 		13E61A38284EA2F40014E42C /* BrewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A37284EA2F40014E42C /* BrewDetailViewController.swift */; };
 		13E61A3B284EA3340014E42C /* BrewDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A3A284EA3340014E42C /* BrewDetailViewModel.swift */; };
-		13E61A3E284EA4460014E42C /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A3D284EA4460014E42C /* RecipeViewController.swift */; };
+		13E61A3E284EA4460014E42C /* IngredientsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A3D284EA4460014E42C /* IngredientsViewController.swift */; };
 		13E61A42284EA8820014E42C /* BrewViewControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E61A41284EA8820014E42C /* BrewViewControllerFactoryTests.swift */; };
 		13EE357A284918190058C2F9 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE3579284918190058C2F9 /* TestHelpers.swift */; };
 		13EE357C28496B130058C2F9 /* BrewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EE357B28496B130058C2F9 /* BrewCell.swift */; };
 		13EE358028496DC40058C2F9 /* BrewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EE357F28496DC40058C2F9 /* BrewCell.xib */; };
 		13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */; };
 		13FEA5FD285928B6007C0A77 /* BrewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */; };
+		189C25CDC9188097D87DB47C /* Pods_Brewcipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756B6966F5BE97EAC2D79301 /* Pods_Brewcipe.framework */; };
+		317CD327C8E3678E8BF669D5 /* Pods_BrewcipeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120E454172AE7D6A1C1E68C8 /* Pods_BrewcipeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0367B35F48ED00EB859D3067 /* Pods-Brewcipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brewcipe.release.xcconfig"; path = "Target Support Files/Pods-Brewcipe/Pods-Brewcipe.release.xcconfig"; sourceTree = "<group>"; };
+		120E454172AE7D6A1C1E68C8 /* Pods_BrewcipeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrewcipeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1307A3F828481D8500083298 /* Brewcipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Brewcipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1307A3FB28481D8500083298 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1307A3FD28481D8500083298 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,16 +77,22 @@
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
 		139ABE042848F9AB00256137 /* BrewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModel.swift; sourceTree = "<group>"; };
+		13C511FD285D03C900C7803C /* IngredientsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewModelTests.swift; sourceTree = "<group>"; };
+		13C511FF285D047700C7803C /* IngredientsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewModel.swift; sourceTree = "<group>"; };
 		13E61A34284D168D0014E42C /* BrewViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewViewControllerFactory.swift; sourceTree = "<group>"; };
 		13E61A37284EA2F40014E42C /* BrewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailViewController.swift; sourceTree = "<group>"; };
 		13E61A3A284EA3340014E42C /* BrewDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailViewModel.swift; sourceTree = "<group>"; };
-		13E61A3D284EA4460014E42C /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		13E61A3D284EA4460014E42C /* IngredientsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewController.swift; sourceTree = "<group>"; };
 		13E61A41284EA8820014E42C /* BrewViewControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewViewControllerFactoryTests.swift; sourceTree = "<group>"; };
 		13EE3579284918190058C2F9 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		13EE357B28496B130058C2F9 /* BrewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewCell.swift; sourceTree = "<group>"; };
 		13EE357F28496DC40058C2F9 /* BrewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewCell.xib; sourceTree = "<group>"; };
 		13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewDetailViewController.xib; sourceTree = "<group>"; };
+		2952D43C9F74F3D8D483FE9C /* Pods-Brewcipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brewcipe.debug.xcconfig"; path = "Target Support Files/Pods-Brewcipe/Pods-Brewcipe.debug.xcconfig"; sourceTree = "<group>"; };
+		64FB7707226AD27B39DDA8F6 /* Pods-BrewcipeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrewcipeTests.debug.xcconfig"; path = "Target Support Files/Pods-BrewcipeTests/Pods-BrewcipeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		756B6966F5BE97EAC2D79301 /* Pods_Brewcipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brewcipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B57085431415EEB61F4FD31C /* Pods-BrewcipeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrewcipeTests.release.xcconfig"; path = "Target Support Files/Pods-BrewcipeTests/Pods-BrewcipeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189C25CDC9188097D87DB47C /* Pods_Brewcipe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				317CD327C8E3678E8BF669D5 /* Pods_BrewcipeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +121,8 @@
 				1307A3FA28481D8500083298 /* Brewcipe */,
 				1307A41128481D8900083298 /* BrewcipeTests */,
 				1307A3F928481D8500083298 /* Products */,
+				EA905E27C5A982D7CF5CD939 /* Pods */,
+				7B60E23C75B94792DC2CCCCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +175,7 @@
 		132EEA142857E3E80084F840 /* BrewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				13C511FC285D03A900C7803C /* Ingredients */,
 				13238E3B2856616400FD2529 /* BrewDetailViewModelTests.swift */,
 			);
 			path = BrewDetail;
@@ -188,6 +205,22 @@
 				132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		13C511FB285D038F00C7803C /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				13C511FF285D047700C7803C /* IngredientsViewModel.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
+		13C511FC285D03A900C7803C /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				13C511FD285D03C900C7803C /* IngredientsViewModelTests.swift */,
+			);
+			path = Ingredients;
 			sourceTree = "<group>";
 		};
 		13E61A27284A85110014E42C /* Domain */ = {
@@ -302,6 +335,7 @@
 		13E61A39284EA31D0014E42C /* BrewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				13C511FB285D038F00C7803C /* Ingredients */,
 				13E61A3A284EA3340014E42C /* BrewDetailViewModel.swift */,
 			);
 			path = BrewDetail;
@@ -310,7 +344,7 @@
 		13E61A3C284EA4340014E42C /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				13E61A3D284EA4460014E42C /* RecipeViewController.swift */,
+				13E61A3D284EA4460014E42C /* IngredientsViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -323,6 +357,27 @@
 			path = BrewDetail;
 			sourceTree = "<group>";
 		};
+		7B60E23C75B94792DC2CCCCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				756B6966F5BE97EAC2D79301 /* Pods_Brewcipe.framework */,
+				120E454172AE7D6A1C1E68C8 /* Pods_BrewcipeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA905E27C5A982D7CF5CD939 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2952D43C9F74F3D8D483FE9C /* Pods-Brewcipe.debug.xcconfig */,
+				0367B35F48ED00EB859D3067 /* Pods-Brewcipe.release.xcconfig */,
+				64FB7707226AD27B39DDA8F6 /* Pods-BrewcipeTests.debug.xcconfig */,
+				B57085431415EEB61F4FD31C /* Pods-BrewcipeTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -330,9 +385,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1307A42228481D8900083298 /* Build configuration list for PBXNativeTarget "Brewcipe" */;
 			buildPhases = (
+				6409F9445D505D5BDF96505B /* [CP] Check Pods Manifest.lock */,
 				1307A3F428481D8500083298 /* Sources */,
 				1307A3F528481D8500083298 /* Frameworks */,
 				1307A3F628481D8500083298 /* Resources */,
+				D4C850AE8C0C59A34F1870B2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,6 +404,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1307A42528481D8900083298 /* Build configuration list for PBXNativeTarget "BrewcipeTests" */;
 			buildPhases = (
+				5E3D4C3B06ECD6903931A1E5 /* [CP] Check Pods Manifest.lock */,
 				1307A40A28481D8900083298 /* Sources */,
 				1307A40B28481D8900083298 /* Frameworks */,
 				1307A40C28481D8900083298 /* Resources */,
@@ -422,6 +480,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E3D4C3B06ECD6903931A1E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrewcipeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6409F9445D505D5BDF96505B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Brewcipe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C850AE8C0C59A34F1870B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brewcipe/Pods-Brewcipe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Brewcipe/Pods-Brewcipe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Brewcipe/Pods-Brewcipe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1307A3F428481D8500083298 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -432,12 +554,13 @@
 				132EEA132857E1D30084F840 /* DictionaryExtensions.swift in Sources */,
 				1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */,
 				1328E5C528483B88001527FB /* ViewControllerFactory.swift in Sources */,
+				13C51200285D047700C7803C /* IngredientsViewModel.swift in Sources */,
 				1307A3FC28481D8500083298 /* AppDelegate.swift in Sources */,
 				13E61A38284EA2F40014E42C /* BrewDetailViewController.swift in Sources */,
 				13EE357C28496B130058C2F9 /* BrewCell.swift in Sources */,
 				13E61A35284D168D0014E42C /* BrewViewControllerFactory.swift in Sources */,
 				132EEA1D2857ED150084F840 /* StringExtensions.swift in Sources */,
-				13E61A3E284EA4460014E42C /* RecipeViewController.swift in Sources */,
+				13E61A3E284EA4460014E42C /* IngredientsViewController.swift in Sources */,
 				1307A3FE28481D8500083298 /* SceneDelegate.swift in Sources */,
 				13E61A3B284EA3340014E42C /* BrewDetailViewModel.swift in Sources */,
 				1328E5C728483BAA001527FB /* Brew.swift in Sources */,
@@ -452,6 +575,7 @@
 				1328E5C928483D16001527FB /* BrewListViewControllerTest.swift in Sources */,
 				13238E3C2856616400FD2529 /* BrewDetailViewModelTests.swift in Sources */,
 				1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */,
+				13C511FE285D03C900C7803C /* IngredientsViewModelTests.swift in Sources */,
 				132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */,
 				13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */,
 				132EEA182857E6690084F840 /* BrewCellTests.swift in Sources */,
@@ -601,6 +725,7 @@
 		};
 		1307A42328481D8900083298 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2952D43C9F74F3D8D483FE9C /* Pods-Brewcipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -628,6 +753,7 @@
 		};
 		1307A42428481D8900083298 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0367B35F48ED00EB859D3067 /* Pods-Brewcipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -655,6 +781,7 @@
 		};
 		1307A42628481D8900083298 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64FB7707226AD27B39DDA8F6 /* Pods-BrewcipeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,6 +809,7 @@
 		};
 		1307A42728481D8900083298 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B57085431415EEB61F4FD31C /* Pods-BrewcipeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

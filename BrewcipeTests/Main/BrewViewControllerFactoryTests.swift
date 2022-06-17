@@ -51,18 +51,18 @@ class BrewViewControllerFactoryTests: XCTestCase {
         XCTAssertNotNil(brewDetailVC?.viewModel)
     }
     
-    func test_recipeViewController_shouldReturnRecipeViewController() {
+    func test_ingredientsViewController_shouldReturnIingredientsViewControllerr() {
         let sut = makeSUT()
-        let recipeVC = sut.recipeViewController(for: makeRecipeDetail()) as? RecipeViewController
+        let ingredientsVC = sut.ingredientsViewController(for: makeRecipeDetail()) as? IngredientsViewController
         
-        XCTAssertNotNil(recipeVC, "recipeVC")
+        XCTAssertNotNil(ingredientsVC, "ingredientsVC")
     }
     
-    func test_recipeViewController_createsControllerWithRecipeString() {
+    func test_ingredientsViewController_createsControllerWithRecipeString() {
         let sut = makeSUT()
-        let recipeVC = sut.recipeViewController(for: makeRecipeDetail()) as? RecipeViewController
+        let ingredientsVC = sut.ingredientsViewController(for: makeRecipeDetail()) as? IngredientsViewController
 
-        XCTAssertNotNil(recipeVC?.recipe, "recipeVC")
+        XCTAssertNotNil(ingredientsVC?.recipe, "ingredientsVC")
     }
 
     // MARK: - Helpers

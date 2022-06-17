@@ -1,5 +1,5 @@
 //
-//  RecipeViewController.swift
+//  IngredientsViewController.swift
 //  Brewcipe
 //
 //  Created by Matías  Gil Echavarría on 6/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class IngredientsViewController: UIViewController {
     private(set) var recipe: String!
     
     convenience init(recipe: String) {

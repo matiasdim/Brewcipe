@@ -120,7 +120,7 @@ class NavigationControllerRouterTests: XCTestCase {
             return UIViewController()
         }
         
-        func recipeViewController(for recipe: String) -> UIViewController {
+        func ingredientsViewController(for recipe: String) -> UIViewController {
             UIViewController()
         }
 
