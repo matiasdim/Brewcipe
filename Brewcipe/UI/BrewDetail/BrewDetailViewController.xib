@@ -15,6 +15,7 @@
                 <outlet property="boilVolumeLabel" destination="PgZ-58-JOa" id="lH8-sv-dZs"/>
                 <outlet property="ebcLabel" destination="czs-U9-s7G" id="NiA-9h-Ebn"/>
                 <outlet property="ibuLabel" destination="45e-qH-v2A" id="2ex-Wj-MK8"/>
+                <outlet property="ingredientsButton" destination="fxA-TX-LjK" id="6BA-G8-kXD"/>
                 <outlet property="phLabel" destination="OB1-J8-e1T" id="7gw-zB-Ofy"/>
                 <outlet property="srmLabel" destination="KCt-Zd-5SV" id="hmy-QR-qvm"/>
                 <outlet property="targetFgLabel" destination="vaB-qY-OJY" id="oEM-NI-eqt"/>
@@ -103,6 +104,14 @@
                                         <constraint firstAttribute="height" constant="150" id="qwB-oe-0yf"/>
                                     </constraints>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxA-TX-LjK">
+                                    <rect key="frame" x="24" y="306" width="366" height="31"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    <connections>
+                                        <action selector="ingredientsButtonTapped:" destination="-1" eventType="touchUpInside" id="0qp-Ba-kdd"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -118,12 +127,15 @@
                                 <constraint firstItem="vaB-qY-OJY" firstAttribute="leading" secondItem="gIq-k5-ay9" secondAttribute="leading" constant="12" id="AxH-kS-egB"/>
                                 <constraint firstItem="a1K-Ua-jkA" firstAttribute="leading" secondItem="vaB-qY-OJY" secondAttribute="trailing" constant="12" id="BdV-pS-5VG"/>
                                 <constraint firstItem="45e-qH-v2A" firstAttribute="leading" secondItem="gIq-k5-ay9" secondAttribute="leading" constant="12" id="CUd-fa-t7R"/>
+                                <constraint firstAttribute="trailing" secondItem="fxA-TX-LjK" secondAttribute="trailing" constant="24" id="Epp-nj-Je4"/>
                                 <constraint firstItem="tFs-bI-q5r" firstAttribute="leading" secondItem="gIq-k5-ay9" secondAttribute="leading" constant="12" id="GQB-a4-LXS"/>
                                 <constraint firstItem="a1K-Ua-jkA" firstAttribute="leading" secondItem="czs-U9-s7G" secondAttribute="trailing" constant="12" id="GRk-ah-ASa"/>
                                 <constraint firstItem="45e-qH-v2A" firstAttribute="top" secondItem="8oa-Gv-a7I" secondAttribute="bottom" constant="12" id="OpI-QK-pIf"/>
                                 <constraint firstItem="tFs-bI-q5r" firstAttribute="top" secondItem="vaB-qY-OJY" secondAttribute="bottom" constant="12" id="Sh1-1q-D5x"/>
                                 <constraint firstItem="a1K-Ua-jkA" firstAttribute="leading" secondItem="GPb-h6-QjC" secondAttribute="trailing" constant="12" id="TYp-WR-Qad"/>
+                                <constraint firstItem="fxA-TX-LjK" firstAttribute="leading" secondItem="gIq-k5-ay9" secondAttribute="leading" constant="24" id="aag-gQ-GPC"/>
                                 <constraint firstItem="vaB-qY-OJY" firstAttribute="top" secondItem="45e-qH-v2A" secondAttribute="bottom" constant="12" id="b8I-uH-ClC"/>
+                                <constraint firstItem="fxA-TX-LjK" firstAttribute="top" secondItem="GPb-h6-QjC" secondAttribute="bottom" constant="30" id="cL8-UX-44t"/>
                                 <constraint firstItem="KCt-Zd-5SV" firstAttribute="leading" secondItem="gIq-k5-ay9" secondAttribute="leading" constant="12" id="nWx-tO-6GI"/>
                                 <constraint firstItem="czs-U9-s7G" firstAttribute="top" secondItem="tFs-bI-q5r" secondAttribute="bottom" constant="12" id="pdi-ws-dSg"/>
                                 <constraint firstItem="a1K-Ua-jkA" firstAttribute="top" secondItem="gIq-k5-ay9" secondAttribute="top" constant="20" id="qJi-9o-abd"/>

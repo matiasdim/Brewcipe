@@ -6,7 +6,7 @@
 //
 
 /// TODO: Missing
-#warning("Missing to add labels for each value, description label and button to open ingredients. Also confifure image")
+#warning("Missing to add labels for each value, description label and button ingredients action. Also confifure image")
 
 import UIKit
 
@@ -23,12 +23,14 @@ class BrewDetailViewController: UIViewController {
     @IBOutlet private(set) weak var attenuationLevelLabel: UILabel!
     @IBOutlet private(set) weak var volumeLabel: UILabel!
     @IBOutlet private(set) weak var boilVolumeLabel: UILabel!
+    @IBOutlet private(set) weak var ingredientsButton: UIButton!
     
+    private(set) var ingredientsButtonAction: (() -> Void)?
     
-    
-    convenience init(viewModel: BrewDetailViewModel) {
+    convenience init(viewModel: BrewDetailViewModel, ingredientsButtonAction: @escaping () -> Void) {
         self.init()
         self.viewModel = viewModel
+        self.ingredientsButtonAction = ingredientsButtonAction
     }
     
     override func viewDidLoad() {
@@ -38,6 +40,10 @@ class BrewDetailViewController: UIViewController {
         title = viewModel?.title
         
         setupLabels()
+    }
+    
+    @IBAction func ingredientsButtonTapped(_ sender: Any) {
+        ingredientsButtonAction?()
     }
     
     // MARK: - private
@@ -52,5 +58,6 @@ class BrewDetailViewController: UIViewController {
         attenuationLevelLabel.text = viewModel?.attenuationLevel
         volumeLabel.text = viewModel?.volume
         boilVolumeLabel.text = viewModel?.boilVolume
+        ingredientsButton.setTitle(viewModel?.ingredientsButtonTitle, for: .normal)
     }
 }

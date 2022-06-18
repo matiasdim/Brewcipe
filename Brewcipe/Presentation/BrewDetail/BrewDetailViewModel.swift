@@ -8,6 +8,8 @@
 struct BrewDetailViewModel {
     let brew: Brew
     
+    var ingredientsButtonTitle = "Ingredients"
+    
     var title: String {
         return brew.name
     }

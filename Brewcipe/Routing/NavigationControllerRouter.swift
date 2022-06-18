@@ -16,6 +16,10 @@ class NavigationControllerRouter {
         self?.selected($0)
     }
     
+    lazy var ingredientsDetailCallback: (Brew) -> Void = { [weak self] in
+        self?.showRecipeDetail(for: $0)
+    }
+    
     init(navigationController: UINavigationController, factory: ViewControllerFactory) {
         self.navigationController = navigationController
         navigationController.navigationBar.prefersLargeTitles = true
@@ -27,7 +31,7 @@ class NavigationControllerRouter {
     }
     
     func selected(_ brew: Brew) {
-        navigationController.pushViewController(factory.brewDetailViewController(for: brew), animated: true)
+        navigationController.pushViewController(factory.brewDetailViewController(for: brew, ingredientsDetailCallback: ingredientsDetailCallback), animated: true)
     }
     
     func showRecipeDetail(for brew: Brew) {

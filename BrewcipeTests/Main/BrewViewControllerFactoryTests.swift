@@ -64,7 +64,7 @@ class BrewViewControllerFactoryTests: XCTestCase {
     }
     
     private func makeBrewDetailVC(_ sut: BrewViewControllerFactory, _ brew: Brew) -> BrewDetailViewController? {
-        return sut.brewDetailViewController(for: brew) as? BrewDetailViewController
+        return sut.brewDetailViewController(for: brew, ingredientsDetailCallback: { _ in }) as? BrewDetailViewController
     }
     
     private func makeBrewListVC(from sut: BrewViewControllerFactory, brews: [Brew] = [], selection: @escaping (Brew) -> Void = {_ in }) -> BrewListViewController? {

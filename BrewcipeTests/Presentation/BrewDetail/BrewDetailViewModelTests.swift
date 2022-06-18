@@ -24,6 +24,10 @@ class BrewDetailViewModelTests: XCTestCase {
         sut = nil
         super.tearDown()
     }
+    
+    func test_ingredientsButtonTitle_shouldBeIngredients() {
+        XCTAssertEqual(sut.ingredientsButtonTitle, "Ingredients")
+    }
 
     func test_viewModel_shouldHaveBrewModel() {
         XCTAssertNotNil(sut.brew)

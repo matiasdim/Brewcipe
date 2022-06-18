@@ -19,9 +19,13 @@ class BrewViewControllerFactory: ViewControllerFactory {
         return vc
     }
     
-    func brewDetailViewController(for brew: Brew) -> UIViewController {
+    func brewDetailViewController(for brew: Brew, ingredientsDetailCallback: @escaping (Brew) -> Void) -> UIViewController {
         let vm = BrewDetailViewModel(brew: brew)
-        return BrewDetailViewController(viewModel: vm)
+        let vc = BrewDetailViewController(viewModel: vm, ingredientsButtonAction: {
+            ingredientsDetailCallback(brew)
+        })                
+        
+        return vc
     }
     
     func ingredientsViewController(for ingredients: Ingredients) -> UIViewController {

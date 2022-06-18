@@ -31,6 +31,7 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.attenuationLevelLabel)
         XCTAssertNotNil(sut.volumeLabel)
         XCTAssertNotNil(sut.boilVolumeLabel)
+        XCTAssertNotNil(sut.ingredientsButton)
     }
     
     func test_brewDetailViewController_shouldHaveBrewNameAsTitle() {
@@ -45,7 +46,7 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.navigationItem.largeTitleDisplayMode,  UINavigationItem.LargeTitleDisplayMode.never)
     }
     
-    func test_brewDetailViewController_shouldSetLabesWHenLoadView() {
+    func test_brewDetailViewController_shouldSetLabesWhenLoadView() {
         let sut = makeSut(brew: makeBrew())
         
         XCTAssertEqual(sut.abvLabel.text, "3.2")
@@ -58,6 +59,7 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.attenuationLevelLabel.text, "75.6")
         XCTAssertEqual(sut.volumeLabel.text, "20.0 litres")
         XCTAssertEqual(sut.boilVolumeLabel.text, "25.0 litres")
+        XCTAssertEqual(sut.ingredientsButton.title(for: .normal), "Ingredients")
     }
     
     // MARK: - Helpers
@@ -68,7 +70,7 @@ class BrewDetailViewControllerTests: XCTestCase {
     }
     
     private func makeSut(brew: Brew, selection: @escaping (Int) -> Void = { _ in }) -> BrewDetailViewController {
-        let sut = BrewDetailViewController(viewModel: makeViewModel(brew))
+        let sut = BrewDetailViewController(viewModel: makeViewModel(brew), ingredientsButtonAction: {  })
         sut.loadViewIfNeeded()
         return sut
     }

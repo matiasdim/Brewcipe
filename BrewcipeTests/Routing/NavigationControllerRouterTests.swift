@@ -116,7 +116,6 @@ class NavigationControllerRouterTests: XCTestCase {
     }
     
     private class ViewControllerFactoryStub: ViewControllerFactory {
-        
         var selectionCallback: ((Brew) -> Void)!
         
         func brewsViewController(for brews: [Brew], selection: @escaping (Brew) -> Void) -> UIViewController {
@@ -128,7 +127,7 @@ class NavigationControllerRouterTests: XCTestCase {
             UIViewController()
         }
 
-        func brewDetailViewController(for brew: Brew) -> UIViewController {
+        func brewDetailViewController(for brew: Brew, ingredientsDetailCallback: @escaping (Brew) -> Void) -> UIViewController {
             return UIViewController()
         }
     }
