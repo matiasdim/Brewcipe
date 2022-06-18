@@ -14,9 +14,7 @@ class BrewListViewController: UIViewController {
     
     private(set) var viewModel: BrewListViewModel?
     private(set) var selection: ((Int) -> Void)?
-    
-    let brewCellClassName = String(describing: BrewCell.self)
-    
+        
     convenience init(viewModel: BrewListViewModel, selection: @escaping (Int) -> Void) {
         self.init()
         self.viewModel = viewModel
@@ -34,7 +32,7 @@ class BrewListViewController: UIViewController {
     // MARK: - private
     private func setupTable() {
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib(nibName: brewCellClassName, bundle: nil), forCellReuseIdentifier: brewCellClassName)
+        tableView.register(UINib(nibName: BrewCell.brewCellClassName, bundle: nil), forCellReuseIdentifier: BrewCell.brewCellClassName)
     }
 }
 
@@ -48,7 +46,7 @@ extension BrewListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: brewCellClassName) as? BrewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BrewCell.brewCellClassName) as? BrewCell else {
             fatalError("Brew cell was not found")
         }
         configure(cell, forRow: indexPath.row)

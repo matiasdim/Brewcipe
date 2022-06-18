@@ -8,6 +8,8 @@
 import UIKit
 
 class BrewCell: UITableViewCell {
+    static let brewCellClassName = String(describing: BrewCell.self)
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var abvLabel: UILabel!

@@ -19,9 +19,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-1c-uA6">
-                    <rect key="frame" x="87" y="356" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wJd-1c-uA6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="0Ep-xe-0Ym"/>
@@ -31,6 +30,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="wJd-1c-uA6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1Sc-Ir-MNM"/>
+                <constraint firstItem="wJd-1c-uA6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="OEI-un-oKQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wJd-1c-uA6" secondAttribute="bottom" id="dPj-M1-SQQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wJd-1c-uA6" secondAttribute="trailing" id="yxX-kS-hh8"/>
+            </constraints>
             <point key="canvasLocation" x="238" y="129"/>
         </view>
     </objects>

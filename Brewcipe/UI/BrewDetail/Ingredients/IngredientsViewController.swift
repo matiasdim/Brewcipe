@@ -11,7 +11,7 @@ class IngredientsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private(set) var viewModel: IngredientsViewModel?
+    private(set) var viewModel: IngredientsViewModel?        
     
     convenience init(viewModel: IngredientsViewModel) {
         self.init()
@@ -22,6 +22,8 @@ class IngredientsViewController: UIViewController {
         super.viewDidLoad()
         
         title = viewModel?.title
+        
+        tableView.register(UINib(nibName: IngredientCell.ingredientCellClassName, bundle: nil), forCellReuseIdentifier: IngredientCell.ingredientCellClassName)
     }
 }
 
@@ -35,7 +37,23 @@ extension IngredientsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: IngredientCell.ingredientCellClassName) as? IngredientCell else {
+            fatalError("Ingredient cell was not found")
+        }
+        configure(cell, for: indexPath)
+        return cell
+    }
+    
+    // MARK: - private
+    private func configure(_ cell: IngredientCell, for indexPath: IndexPath) {
+        guard let viewModel = viewModel else {
+            fatalError("ViewModel not set")
+        }
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        cell.configure(title: viewModel.title(forIndex: row, inSection: section),
+                       subtitle: viewModel.subtitle(forIndex: row, inSection: section))
     }
 }
 

@@ -24,6 +24,8 @@
 		132EEA1F2857F0140084F840 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */; };
 		13568660285D6C6C0023F04A /* IngredientsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */; };
 		13568662285D70270023F04A /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13568661285D70270023F04A /* IngredientsViewController.xib */; };
+		13568664285E58BD0023F04A /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13568663285E58BD0023F04A /* IngredientCell.swift */; };
+		13568666285E58F00023F04A /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13568665285E58F00023F04A /* IngredientCell.xib */; };
 		1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */; };
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
@@ -77,6 +79,8 @@
 		132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewControllerTests.swift; sourceTree = "<group>"; };
 		13568661285D70270023F04A /* IngredientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
+		13568663285E58BD0023F04A /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		13568665285E58F00023F04A /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewController.swift; sourceTree = "<group>"; };
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
@@ -358,6 +362,8 @@
 			children = (
 				13E61A3D284EA4460014E42C /* IngredientsViewController.swift */,
 				13568661285D70270023F04A /* IngredientsViewController.xib */,
+				13568663285E58BD0023F04A /* IngredientCell.swift */,
+				13568665285E58F00023F04A /* IngredientCell.xib */,
 			);
 			path = Ingredients;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				13FEA5FD285928B6007C0A77 /* BrewDetailViewController.xib in Resources */,
 				13568662285D70270023F04A /* IngredientsViewController.xib in Resources */,
 				1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */,
+				13568666285E58F00023F04A /* IngredientCell.xib in Resources */,
 				1307A40528481D8900083298 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +578,7 @@
 				13C51200285D047700C7803C /* IngredientsViewModel.swift in Sources */,
 				1307A3FC28481D8500083298 /* AppDelegate.swift in Sources */,
 				13E61A38284EA2F40014E42C /* BrewDetailViewController.swift in Sources */,
+				13568664285E58BD0023F04A /* IngredientCell.swift in Sources */,
 				13EE357C28496B130058C2F9 /* BrewCell.swift in Sources */,
 				13E61A35284D168D0014E42C /* BrewViewControllerFactory.swift in Sources */,
 				132EEA1D2857ED150084F840 /* StringExtensions.swift in Sources */,
