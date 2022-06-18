@@ -7,6 +7,8 @@
 
 import XCTest
 @testable import Brewcipe
+import SwiftCollections
+
 
 class BrewDetailViewControllerTests: XCTestCase {
     
@@ -54,8 +56,8 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.srmLabel.text, "9.9")
         XCTAssertEqual(sut.phLabel.text, "4.4")
         XCTAssertEqual(sut.attenuationLevelLabel.text, "75.6")
-        XCTAssertEqual(sut.volumeLabel.text, "20 litres")
-        XCTAssertEqual(sut.boilVolumeLabel.text, "25 litres")
+        XCTAssertEqual(sut.volumeLabel.text, "20.0 litres")
+        XCTAssertEqual(sut.boilVolumeLabel.text, "25.0 litres")
     }
     
     // MARK: - Helpers
@@ -76,6 +78,8 @@ class BrewDetailViewControllerTests: XCTestCase {
     }
     
     private func makeBrew() -> Brew {
+        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+
         return Brew(name: "B1",
                     tagline: "T1",
                     imageUrl: "https://dummy.com",
@@ -89,7 +93,8 @@ class BrewDetailViewControllerTests: XCTestCase {
                     attenuationLevel: 75.6,
                     volume: [20: "litres"],
                     boilVolume: [25: "litres"],
-                    description: "A description of the brew")
+                    description: "A description of the brew",
+                    ingredients: ingredients)
     }
 
 }

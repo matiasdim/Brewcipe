@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftCollections
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -26,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func start() {
+        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
         router.brewList([Brew(name: "a",
                               tagline: "a",
                               imageUrl: nil,
@@ -39,7 +41,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                               attenuationLevel: 75.6,
                               volume: [20: "litres"],
                               boilVolume: [25: "litres"],
-                              description: "A description of the brew")]) // TODO: Remove beer
+                              description: "A description of the brew",
+                              ingredients: ingredients)]) // TODO: Remove beer
     }
 }
 

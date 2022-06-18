@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Brewcipe
+import SwiftCollections
 
 class NavigationControllerRouterTests: XCTestCase {
     
@@ -18,6 +19,8 @@ class NavigationControllerRouterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         factory = ViewControllerFactoryStub()
+        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+
         brew = Brew(name: "B1",
                     tagline: "T1",
                     imageUrl: nil,
@@ -31,7 +34,8 @@ class NavigationControllerRouterTests: XCTestCase {
                     attenuationLevel: 75.6,
                     volume: [20: "litres"],
                     boilVolume: [25: "litres"],
-                    description: "A description of the brew")
+                    description: "A description of the brew",
+                    ingredients: ingredients)
         navigationController = NonAnimatedNavigationController()
         sut = NavigationControllerRouter(navigationController: navigationController, factory: factory)
     }

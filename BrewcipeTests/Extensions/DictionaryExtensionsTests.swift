@@ -11,15 +11,15 @@ import XCTest
 class DictionaryExtensionsTests: XCTestCase {
 
     func test_keyAndValueConcatenated_withValidData_shouldReturnConcatenatedString() {
-        let sut = [20: "Cows"]
+        let sut = [20.0: "Cows"]
         
-        XCTAssertEqual(sut.keyAndValueConcatenated(), "20 Cows")
+        XCTAssertEqual(sut.keyAndValueConcatenated(), "20.0 Cows")
     }
     
     func test_keyAndValueConcatenated_withNoData_shouldReturnNil() {
-        let sut = [Int:String]()
+        let sut = [Double :String]()
         
-        XCTAssertNil(sut.keyAndValueConcatenated(), "20 Cows")
+        XCTAssertNil(sut.keyAndValueConcatenated())
     }
 
 }

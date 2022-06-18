@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Brewcipe
+import SwiftCollections
 
 class BrewViewControllerFactoryTests: XCTestCase {
     
@@ -71,20 +72,23 @@ class BrewViewControllerFactoryTests: XCTestCase {
     }
     
     private func makeBrew() -> Brew {
-        Brew(name: "Brew",
-             tagline: "tagline",
-             imageUrl: nil,
-             abv: 0.0,
-             ibu: 0,
-             targetFg: 0,
-             targetOg: 0,
-             ebc: 19.5,
-             srm: 9.9,
-             ph: 4.4,
-             attenuationLevel: 75.6,
-             volume: [20: "litres"],
-             boilVolume: [25: "litres"],
-             description: "A description of the brew")
+        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+
+        return Brew(name: "Brew",
+                     tagline: "tagline",
+                     imageUrl: nil,
+                     abv: 0.0,
+                     ibu: 0,
+                     targetFg: 0,
+                     targetOg: 0,
+                     ebc: 19.5,
+                     srm: 9.9,
+                     ph: 4.4,
+                     attenuationLevel: 75.6,
+                     volume: [20: "litres"],
+                     boilVolume: [25: "litres"],
+                     description: "A description of the brew",
+                     ingredients: ingredients)
     }
     
     private func makeRecipeDetail() -> String {

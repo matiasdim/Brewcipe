@@ -5,6 +5,8 @@
 //  Created by Matías  Gil Echavarría on 1/06/22.
 //
 
+import SwiftCollections
+
 struct Brew {
     let name: String
     let tagline: String
@@ -17,7 +19,8 @@ struct Brew {
     let srm: Double
     let ph: Double
     let attenuationLevel: Double
-    let volume: [Int: String]
-    let boilVolume: [Int: String]
+    let volume: [Double: String]
+    let boilVolume: [Double: String]
     let description: String
+    let ingredients: OrderedDictionary<String, Any>
 }

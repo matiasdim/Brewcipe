@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Brewcipe
+import SwiftCollections
 
 class BrewDetailViewModelTests: XCTestCase {
     private var brew: Brew!
@@ -65,7 +66,7 @@ class BrewDetailViewModelTests: XCTestCase {
     }
     
     func test_viewModel_shouldProvideBrewVolume() {
-        XCTAssertEqual(sut.volume, "20 litres")
+        XCTAssertEqual(sut.volume, "20.0 litres")
     }
     
     func test_viewModelWithNoKeyAndValueForVolume_shoulreturnNil() {
@@ -74,7 +75,7 @@ class BrewDetailViewModelTests: XCTestCase {
     }
     
     func test_viewModel_shouldProvideBrewBoilVolume() {
-        XCTAssertEqual(sut.boilVolume, "25 litres")
+        XCTAssertEqual(sut.boilVolume, "25.0 litres")
     }
     
     func test_viewModelWithNoKeyAndValueForBoilVolume_shoulreturnNil() {
@@ -87,6 +88,8 @@ class BrewDetailViewModelTests: XCTestCase {
     }
     
     // MARK: - Helpers
+    
+    let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
     
     private func makeBrew() -> Brew {
         return Brew(name: "B1",
@@ -102,7 +105,8 @@ class BrewDetailViewModelTests: XCTestCase {
                     attenuationLevel: 75.6,
                     volume: [20: "litres"],
                     boilVolume: [25: "litres"],
-                    description: "A description of the brew")
+                    description: "A description of the brew",
+                    ingredients: ingredients)
     }
     
     private func makeBrewEmptyVolumes() -> Brew {
@@ -119,6 +123,7 @@ class BrewDetailViewModelTests: XCTestCase {
                     attenuationLevel: 75.6,
                     volume: [:],
                     boilVolume: [:],
-                    description: "A description of the brew")
+                    description: "A description of the brew",
+                    ingredients: ingredients)
     }
 }

@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import Brewcipe
+import SwiftCollections
 
 class BrewListViewControllerTest: XCTestCase {
     
@@ -160,6 +161,8 @@ class BrewListViewControllerTest: XCTestCase {
     }
     
     private func makeBrews() -> [Brew] {
+        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+
         return [Brew(name: "B1",
                      tagline: "T1",
                      imageUrl: "https://dummy.com",
@@ -173,7 +176,8 @@ class BrewListViewControllerTest: XCTestCase {
                      attenuationLevel: 75.6,
                      volume: [20: "litres"],
                      boilVolume: [25: "litres"],
-                     description: "A description of the brew"),
+                     description: "A description of the brew",
+                     ingredients: ingredients),
                 Brew(name: "B2",
                      tagline: "T2",
                      imageUrl: nil,
@@ -187,7 +191,8 @@ class BrewListViewControllerTest: XCTestCase {
                      attenuationLevel: 75.6,
                      volume: [20: "litres"],
                      boilVolume: [25: "litres"],
-                     description: "A description of the brew"),
+                     description: "A description of the brew",
+                     ingredients: ingredients),
                 Brew(name: "B3",
                      tagline: "T3",
                      imageUrl: "https://images.punkapi.com/v2/keg.png",
@@ -201,6 +206,7 @@ class BrewListViewControllerTest: XCTestCase {
                      attenuationLevel: 75.6,
                      volume: [20: "litres"],
                      boilVolume: [25: "litres"],
-                     description: "A description of the brew")]
+                     description: "A description of the brew",
+                     ingredients: ingredients)]
     }
 }
