@@ -8,7 +8,7 @@
 import SwiftCollections
 
 class IngredientsViewModel {
-    private let ingredients: OrderedDictionary<String, Any>
+    private let ingredients: Ingredients
    
     let title = "Ingredients"
     
@@ -17,7 +17,7 @@ class IngredientsViewModel {
     }
     
     
-    init(ingredients: OrderedDictionary<String, Any>) {
+    init(ingredients: Ingredients) {
         self.ingredients = ingredients
     }
 
@@ -29,11 +29,11 @@ class IngredientsViewModel {
     func numberOfRows(forSection section: Int) -> Int {
         let value = keyAndValue(forSection: section).value
         
-        if let value = value as? Array<[String :Any]> {
+        if let value = valueIsArray(value) {
             return value.count
         }
         
-        if let _ = value as? String {
+        if let _ = valueIsString(value) {
             return 1
         }
         
@@ -43,11 +43,11 @@ class IngredientsViewModel {
     func title(forIndex index: Int, inSection section: Int) -> String {
         let value = keyAndValue(forSection: section).value
         
-        if let value = value as? Array<[String :Any]>, let name = value[index]["name"] as? String {
+        if let value = valueIsArray(value), let name = valueIsString(value[index]["name"]) {
             return name
         }
         
-        if let value = value as? String {
+        if let value = valueIsString(value) {
             return value
         }
         
@@ -57,8 +57,8 @@ class IngredientsViewModel {
     func subtitle(forIndex index: Int, inSection section: Int) -> String {
         let value = keyAndValue(forSection: section).value
         
-        if let value = value as? Array<[String :Any]>,
-            let amountDict = value[index]["amount"] as? [Double: String],
+        if let value = valueIsArray(value),
+            let amountDict = valueIsDictionary(value[index]["amount"]),
             let amount = amountDict.keyAndValueConcatenated()
         {
             return amount
@@ -68,6 +68,18 @@ class IngredientsViewModel {
     }
     
     // MARK: - private
+    
+    private func valueIsDictionary(_ value: Any?) -> [Double : String]? {
+        return value as? [Double: String]
+    }
+    
+    private func valueIsArray(_ value: Any?) -> [[String : Any]]? {
+        return value as? Array<[String: Any]>
+    }
+    
+    private func valueIsString(_ value: Any?) -> String? {
+        return value as? String
+    }
     
     private func keyAndValue(forSection section: Int) -> (key: String, value: Any?) {
         let key = ingredients.keys[section]

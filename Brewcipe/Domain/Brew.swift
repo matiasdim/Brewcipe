@@ -7,6 +7,8 @@
 
 import SwiftCollections
 
+typealias Ingredients = OrderedDictionary<String, Any>
+
 struct Brew {
     let name: String
     let tagline: String
@@ -22,5 +24,5 @@ struct Brew {
     let volume: [Double: String]
     let boilVolume: [Double: String]
     let description: String
-    let ingredients: OrderedDictionary<String, Any>
+    let ingredients: Ingredients
 }
