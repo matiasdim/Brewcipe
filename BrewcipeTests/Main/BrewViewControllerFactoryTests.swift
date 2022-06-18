@@ -12,63 +12,65 @@ import SwiftCollections
 class BrewViewControllerFactoryTests: XCTestCase {
     
     func test_brewsViewController_shouldReturnBrewListViewController() {
-        let sut = makeSUT()
-        let brewListVC = sut.brewsViewController(for: [], selection: {_ in }) as? BrewListViewController
+        let brewListVC = makeBrewListVC(from: makeSUT())
 
         XCTAssertNotNil(brewListVC, "brewListVC")
     }
     
     func test_brewsViewController_createsControllerWithViewModel() {
-        let sut = makeSUT()
-        let brewListVC = sut.brewsViewController(for: [], selection: {_ in }) as? BrewListViewController
+        let brewListVC = makeBrewListVC(from: makeSUT())
          
         XCTAssertNotNil(brewListVC?.viewModel)
     }
     
-    func test_brewsViewController_itemIsSelected_shouldFireCallback() {
-        let sut = makeSUT()
+    func test_brewsViewController_itemIsSelected_shouldFireCallback() {        
         var callbackWasFired = false
-        let brewListVC = sut.brewsViewController(for: [makeBrew()], selection: { _ in callbackWasFired = true }) as! BrewListViewController
-        brewListVC.loadViewIfNeeded()
         
-        brewListVC.tableView(brewListVC.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        let brewListVC = makeBrewListVC(from: makeSUT(), brews: [makeBrew()], selection: { _ in callbackWasFired = true })
+        brewListVC!.loadViewIfNeeded()
+        
+        brewListVC!.tableView(brewListVC!.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
         
         XCTAssertTrue(callbackWasFired)
     }
     
     func test_brewDetailViewController_shouldReturnBrewDetailViewController() {
-        let sut = makeSUT()
-        let brew = makeBrew()
-        let brewDetailVC = sut.brewDetailViewController(for: brew) as? BrewDetailViewController
+        let brewDetailVC = makeBrewDetailVC(makeSUT(), makeBrew())
         
         XCTAssertNotNil(brewDetailVC, "brewDetailVC")
     }
     
     func test_brewDetailViewController_createsControllerWithViewModel() {
-        let sut = makeSUT()
-        let brew = makeBrew()
-        let brewDetailVC = sut.brewDetailViewController(for: brew) as? BrewDetailViewController
+        let brewDetailVC = makeBrewDetailVC(makeSUT(), makeBrew())
         
         XCTAssertNotNil(brewDetailVC?.viewModel)
     }
     
     func test_ingredientsViewController_shouldReturnIingredientsViewControllerr() {
-        let sut = makeSUT()
-        let brew = makeBrew()
-        let ingredientsVC = sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
+        let ingredientsVC = makeIngredientsVC(makeSUT(), makeBrew())
         
         XCTAssertNotNil(ingredientsVC, "ingredientsVC")
     }
     
-    func test_ingredientsViewController_createsControllerWithViewModel() {
-        let sut = makeSUT()
-        let brew = makeBrew()
-        let ingredientsVC = sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
+    func test_ingredientsViewController_createsControllerWithViewModel() {        
+        let ingredientsVC = makeIngredientsVC(makeSUT(), makeBrew())
 
         XCTAssertNotNil(ingredientsVC?.viewModel)
     }
 
     // MARK: - Helpers
+    private func makeIngredientsVC(_ sut: BrewViewControllerFactory, _ brew: Brew) -> IngredientsViewController? {
+        return sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
+    }
+    
+    private func makeBrewDetailVC(_ sut: BrewViewControllerFactory, _ brew: Brew) -> BrewDetailViewController? {
+        return sut.brewDetailViewController(for: brew) as? BrewDetailViewController
+    }
+    
+    private func makeBrewListVC(from sut: BrewViewControllerFactory, brews: [Brew] = [], selection: @escaping (Brew) -> Void = {_ in }) -> BrewListViewController? {
+        return sut.brewsViewController(for: brews, selection: selection) as? BrewListViewController
+    }
+    
     private func makeSUT() -> BrewViewControllerFactory {
         BrewViewControllerFactory()
     }

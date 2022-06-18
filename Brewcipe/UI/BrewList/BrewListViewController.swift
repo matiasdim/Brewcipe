@@ -34,6 +34,20 @@ class BrewListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: BrewCell.brewCellClassName, bundle: nil), forCellReuseIdentifier: BrewCell.brewCellClassName)
     }
+    
+    private func configure(_ cell: BrewCell, forRow index: Int) {
+        guard  let viewModel = viewModel else {
+            fatalError("ViewModel not set")
+        }
+        
+        cell.configure(name: viewModel.name(for: index),
+                       tagline: viewModel.tagline(for: index),
+                       abv: viewModel.abv(for: index),
+                       ibu: viewModel.ibu(for: index),
+                       targetFg: viewModel.targetFg(for: index),
+                       targetOg: viewModel.targetOg(for: index),
+                       brewImage: viewModel.brewImage(for: index))
+    }
 }
 
 extension BrewListViewController: UITableViewDataSource {
@@ -52,20 +66,6 @@ extension BrewListViewController: UITableViewDataSource {
         configure(cell, forRow: indexPath.row)
         
         return cell
-    }
-    
-    private func configure(_ cell: BrewCell, forRow index: Int) {
-        guard  let viewModel = viewModel else {
-            fatalError("ViewModel not set")
-        }
-        
-        cell.configure(name: viewModel.name(for: index),
-                       tagline: viewModel.tagline(for: index),
-                       abv: viewModel.abv(for: index),
-                       ibu: viewModel.ibu(for: index),
-                       targetFg: viewModel.targetFg(for: index),
-                       targetOg: viewModel.targetOg(for: index),
-                       brewImage: viewModel.brewImage(for: index))
     }
 }
 

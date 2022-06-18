@@ -10,7 +10,6 @@ import UIKit
 class IngredientsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
     private(set) var viewModel: IngredientsViewModel?        
     
     convenience init(viewModel: IngredientsViewModel) {
@@ -24,6 +23,18 @@ class IngredientsViewController: UIViewController {
         title = viewModel?.title
         
         tableView.register(UINib(nibName: IngredientCell.ingredientCellClassName, bundle: nil), forCellReuseIdentifier: IngredientCell.ingredientCellClassName)
+    }
+    
+    // MARK: - private
+    private func configure(_ cell: IngredientCell, for indexPath: IndexPath) {
+        guard let viewModel = viewModel else {
+            fatalError("ViewModel not set")
+        }
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        cell.configure(title: viewModel.title(forIndex: row, inSection: section),
+                       subtitle: viewModel.subtitle(forIndex: row, inSection: section))
     }
 }
 
@@ -42,18 +53,6 @@ extension IngredientsViewController: UITableViewDataSource {
         }
         configure(cell, for: indexPath)
         return cell
-    }
-    
-    // MARK: - private
-    private func configure(_ cell: IngredientCell, for indexPath: IndexPath) {
-        guard let viewModel = viewModel else {
-            fatalError("ViewModel not set")
-        }
-        let row = indexPath.row
-        let section = indexPath.section
-        
-        cell.configure(title: viewModel.title(forIndex: row, inSection: section),
-                       subtitle: viewModel.subtitle(forIndex: row, inSection: section))
     }
 }
 

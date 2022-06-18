@@ -26,6 +26,7 @@
 		13568662285D70270023F04A /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13568661285D70270023F04A /* IngredientsViewController.xib */; };
 		13568664285E58BD0023F04A /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13568663285E58BD0023F04A /* IngredientCell.swift */; };
 		13568666285E58F00023F04A /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13568665285E58F00023F04A /* IngredientCell.xib */; };
+		13568668285E62820023F04A /* IngredientCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13568667285E62820023F04A /* IngredientCellTests.swift */; };
 		1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */; };
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
@@ -81,6 +82,7 @@
 		13568661285D70270023F04A /* IngredientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
 		13568663285E58BD0023F04A /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		13568665285E58F00023F04A /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
+		13568667285E62820023F04A /* IngredientCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCellTests.swift; sourceTree = "<group>"; };
 		1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewController.swift; sourceTree = "<group>"; };
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		1356865E285D6C4B0023F04A /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
+				13568667285E62820023F04A /* IngredientCellTests.swift */,
 				1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */,
 			);
 			path = Ingredients;
@@ -268,8 +271,8 @@
 			isa = PBXGroup;
 			children = (
 				1307A3FB28481D8500083298 /* AppDelegate.swift */,
-				1307A3FD28481D8500083298 /* SceneDelegate.swift */,
 				13E61A34284D168D0014E42C /* BrewViewControllerFactory.swift */,
+				1307A3FD28481D8500083298 /* SceneDelegate.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -277,8 +280,8 @@
 		13E61A2B284A856E0014E42C /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				1328E5C428483B88001527FB /* ViewControllerFactory.swift */,
 				1307A42D28481F1800083298 /* NavigationControllerRouter.swift */,
+				1328E5C428483B88001527FB /* ViewControllerFactory.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -360,10 +363,10 @@
 		13E61A3C284EA4340014E42C /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
-				13E61A3D284EA4460014E42C /* IngredientsViewController.swift */,
-				13568661285D70270023F04A /* IngredientsViewController.xib */,
 				13568663285E58BD0023F04A /* IngredientCell.swift */,
 				13568665285E58F00023F04A /* IngredientCell.xib */,
+				13E61A3D284EA4460014E42C /* IngredientsViewController.swift */,
+				13568661285D70270023F04A /* IngredientsViewController.xib */,
 			);
 			path = Ingredients;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				13238E3C2856616400FD2529 /* BrewDetailViewModelTests.swift in Sources */,
 				1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */,
 				13C511FE285D03C900C7803C /* IngredientsViewModelTests.swift in Sources */,
+				13568668285E62820023F04A /* IngredientCellTests.swift in Sources */,
 				13568660285D6C6C0023F04A /* IngredientsViewControllerTests.swift in Sources */,
 				132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */,
 				13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */,

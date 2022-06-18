@@ -10,6 +10,10 @@ import XCTest
 
 class BrewCellTests: XCTestCase {
     
+    func test_brewCellClassName_shouldBeBrewCell() {
+        XCTAssertEqual(BrewCell.brewCellClassName, "BrewCell")
+    }
+    
     func test_brewCell_outletsConected() {
         let sut = makeSut()!
         
@@ -22,7 +26,7 @@ class BrewCellTests: XCTestCase {
         XCTAssertNotNil(sut.brewImageView)
     }
     
-    func test_brewCell_corectlySetsLabelsTexts() {
+    func test_brewCell_correctlySetsLabelsTexts() {
         let sut = makeSut()!
         
         sut.configure(name: "name", tagline: "tagline", abv: "abv", ibu: "ibu", targetFg: "fg", targetOg: "og", brewImage: .remove)
