@@ -86,7 +86,7 @@ class BrewListViewModelTests: XCTestCase {
     }
     
     private func makeBrews() -> [Brew] {
-        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+        let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
 
         return [Brew(name: "B1",
                      tagline: "T1",

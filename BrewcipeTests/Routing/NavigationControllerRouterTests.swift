@@ -19,7 +19,7 @@ class NavigationControllerRouterTests: XCTestCase {
     override func setUp() {
         super.setUp()
         factory = ViewControllerFactoryStub()
-        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+        let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
 
         brew = Brew(name: "B1",
                     tagline: "T1",
@@ -124,7 +124,7 @@ class NavigationControllerRouterTests: XCTestCase {
             return UIViewController()
         }
         
-        func ingredientsViewController(for recipe: String) -> UIViewController {
+        func ingredientsViewController(for ingredients: Ingredients) -> UIViewController {
             UIViewController()
         }
 

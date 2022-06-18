@@ -31,7 +31,7 @@ class NavigationControllerRouter {
     }
     
     func showRecipeDetail(for brew: Brew) {
-        navigationController.present(factory.ingredientsViewController(for: "recipe description"), animated: true)
+        navigationController.present(factory.ingredientsViewController(for: brew.ingredients), animated: true)
     }
 }
 

@@ -54,16 +54,18 @@ class BrewViewControllerFactoryTests: XCTestCase {
     
     func test_ingredientsViewController_shouldReturnIingredientsViewControllerr() {
         let sut = makeSUT()
-        let ingredientsVC = sut.ingredientsViewController(for: makeRecipeDetail()) as? IngredientsViewController
+        let brew = makeBrew()
+        let ingredientsVC = sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
         
         XCTAssertNotNil(ingredientsVC, "ingredientsVC")
     }
     
-    func test_ingredientsViewController_createsControllerWithRecipeString() {
+    func test_ingredientsViewController_createsControllerWithViewModel() {
         let sut = makeSUT()
-        let ingredientsVC = sut.ingredientsViewController(for: makeRecipeDetail()) as? IngredientsViewController
+        let brew = makeBrew()
+        let ingredientsVC = sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
 
-        XCTAssertNotNil(ingredientsVC?.recipe, "ingredientsVC")
+        XCTAssertNotNil(ingredientsVC?.viewModel)
     }
 
     // MARK: - Helpers
@@ -72,7 +74,7 @@ class BrewViewControllerFactoryTests: XCTestCase {
     }
     
     private func makeBrew() -> Brew {
-        let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+        let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
 
         return Brew(name: "Brew",
                      tagline: "tagline",
@@ -89,9 +91,5 @@ class BrewViewControllerFactoryTests: XCTestCase {
                      boilVolume: [25: "litres"],
                      description: "A description of the brew",
                      ingredients: ingredients)
-    }
-    
-    private func makeRecipeDetail() -> String {
-        "This is the brew recipe"
     }
 }

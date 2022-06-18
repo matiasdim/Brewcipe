@@ -24,8 +24,9 @@ class BrewViewControllerFactory: ViewControllerFactory {
         return BrewDetailViewController(viewModel: vm)
     }
     
-    func ingredientsViewController(for recipe: String) -> UIViewController {
-        return IngredientsViewController(recipe: recipe)
+    func ingredientsViewController(for ingredients: Ingredients) -> UIViewController {
+        let vm = IngredientsViewModel(ingredients: ingredients)
+        return IngredientsViewController(viewModel: vm)
     }
     
     

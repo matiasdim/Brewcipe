@@ -96,7 +96,7 @@ class IngredientsViewModelTests: XCTestCase {
     }
     
     // MARK: - private
-    private func makeIngredients() -> OrderedDictionary<String, Any> {
+    private func makeIngredients() -> Ingredients {
         return OrderedDictionary.init(uniqueKeys: ["yeast",
                                                    "malt",
                                                    "wrong"],
@@ -112,9 +112,9 @@ class IngredientsViewModelTests: XCTestCase {
     }
     
     private class TestbleIngredientsViewModel: IngredientsViewModel {
-        let testableIngredientes: OrderedDictionary<String, Any>
+        let testableIngredientes: Ingredients
 
-        override init(ingredients: OrderedDictionary<String, Any>) {
+        override init(ingredients: Ingredients) {
             testableIngredientes = ingredients
             super.init(ingredients: ingredients)
         }

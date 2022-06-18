@@ -11,6 +11,10 @@ func numbersOfRows(in table: UITableView, section: Int) -> Int? {
     table.dataSource?.tableView(table, numberOfRowsInSection: section)
 }
 
+func numberOfSections(in table: UITableView) -> Int? {
+    table.dataSource?.numberOfSections?(in: table)
+}
+
 func cellForRow(in table: UITableView, indexPath: IndexPath) -> UITableViewCell? {
     table.dataSource?.tableView(table, cellForRowAt: indexPath)
 }

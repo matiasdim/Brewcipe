@@ -89,7 +89,7 @@ class BrewDetailViewModelTests: XCTestCase {
     
     // MARK: - Helpers
     
-    let ingredients: OrderedDictionary<String, Any> = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+    let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
     
     private func makeBrew() -> Brew {
         return Brew(name: "B1",

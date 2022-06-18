@@ -22,6 +22,8 @@
 		132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1A2857EB950084F840 /* DictionaryExtensionsTests.swift */; };
 		132EEA1D2857ED150084F840 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1C2857ED150084F840 /* StringExtensions.swift */; };
 		132EEA1F2857F0140084F840 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */; };
+		13568660285D6C6C0023F04A /* IngredientsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */; };
+		13568662285D70270023F04A /* IngredientsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13568661285D70270023F04A /* IngredientsViewController.xib */; };
 		1392A65B284A4DE9007BE5B2 /* BrewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */; };
 		1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */; };
 		139ABE032848F99300256137 /* BrewListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139ABE022848F99200256137 /* BrewListViewModelTests.swift */; };
@@ -73,6 +75,8 @@
 		132EEA1A2857EB950084F840 /* DictionaryExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensionsTests.swift; sourceTree = "<group>"; };
 		132EEA1C2857ED150084F840 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		132EEA1E2857F0140084F840 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
+		1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsViewControllerTests.swift; sourceTree = "<group>"; };
+		13568661285D70270023F04A /* IngredientsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsViewController.xib; sourceTree = "<group>"; };
 		1392A65A284A4DE9007BE5B2 /* BrewListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewController.swift; sourceTree = "<group>"; };
 		1392A65C284A4E40007BE5B2 /* BrewListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrewListViewController.xib; sourceTree = "<group>"; };
 		139ABE022848F99200256137 /* BrewListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListViewModelTests.swift; sourceTree = "<group>"; };
@@ -207,6 +211,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		1356865E285D6C4B0023F04A /* Ingredients */ = {
+			isa = PBXGroup;
+			children = (
+				1356865F285D6C6C0023F04A /* IngredientsViewControllerTests.swift */,
+			);
+			path = Ingredients;
+			sourceTree = "<group>";
+		};
 		13C511FB285D038F00C7803C /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,7 +337,7 @@
 		13E61A36284EA2E70014E42C /* BrewDetail */ = {
 			isa = PBXGroup;
 			children = (
-				13E61A3C284EA4340014E42C /* Recipe */,
+				13E61A3C284EA4340014E42C /* Ingredients */,
 				13E61A37284EA2F40014E42C /* BrewDetailViewController.swift */,
 				13FEA5FC285928B6007C0A77 /* BrewDetailViewController.xib */,
 			);
@@ -341,17 +353,19 @@
 			path = BrewDetail;
 			sourceTree = "<group>";
 		};
-		13E61A3C284EA4340014E42C /* Recipe */ = {
+		13E61A3C284EA4340014E42C /* Ingredients */ = {
 			isa = PBXGroup;
 			children = (
 				13E61A3D284EA4460014E42C /* IngredientsViewController.swift */,
+				13568661285D70270023F04A /* IngredientsViewController.xib */,
 			);
-			path = Recipe;
+			path = Ingredients;
 			sourceTree = "<group>";
 		};
 		13FEA5F928592603007C0A77 /* BrewDetail */ = {
 			isa = PBXGroup;
 			children = (
+				1356865E285D6C4B0023F04A /* Ingredients */,
 				13FEA5FA28592614007C0A77 /* BrewDetailViewControllerTests.swift */,
 			);
 			path = BrewDetail;
@@ -374,7 +388,6 @@
 				64FB7707226AD27B39DDA8F6 /* Pods-BrewcipeTests.debug.xcconfig */,
 				B57085431415EEB61F4FD31C /* Pods-BrewcipeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -466,6 +479,7 @@
 				13EE358028496DC40058C2F9 /* BrewCell.xib in Resources */,
 				1307A40828481D8900083298 /* LaunchScreen.storyboard in Resources */,
 				13FEA5FD285928B6007C0A77 /* BrewDetailViewController.xib in Resources */,
+				13568662285D70270023F04A /* IngredientsViewController.xib in Resources */,
 				1392A65D284A4E40007BE5B2 /* BrewListViewController.xib in Resources */,
 				1307A40528481D8900083298 /* Assets.xcassets in Resources */,
 			);
@@ -576,6 +590,7 @@
 				13238E3C2856616400FD2529 /* BrewDetailViewModelTests.swift in Sources */,
 				1307A42C28481E7B00083298 /* NavigationControllerRouterTests.swift in Sources */,
 				13C511FE285D03C900C7803C /* IngredientsViewModelTests.swift in Sources */,
+				13568660285D6C6C0023F04A /* IngredientsViewControllerTests.swift in Sources */,
 				132EEA1B2857EB950084F840 /* DictionaryExtensionsTests.swift in Sources */,
 				13FEA5FB28592614007C0A77 /* BrewDetailViewControllerTests.swift in Sources */,
 				132EEA182857E6690084F840 /* BrewCellTests.swift in Sources */,
