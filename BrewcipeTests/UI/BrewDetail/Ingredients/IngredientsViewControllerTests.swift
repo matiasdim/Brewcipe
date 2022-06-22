@@ -93,7 +93,9 @@ class IngredientsViewControllerTests: XCTestCase {
         XCTAssertEqual(cell?.subtitleLabel.text, "")
     }
     
-    // Test
+    func test_titleForSection0_shouldBeYeastCapitalized() {
+        XCTAssertEqual(titleForHeaderInSection(in: sut.tableView, section: 0), "Yeast")
+    }
     
     // MARK: - private
     

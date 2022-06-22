@@ -47,6 +47,10 @@ extension IngredientsViewController: UITableViewDataSource {
         return viewModel?.numberOfRows(forSection: section) ?? 0
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel?.title(forSection: section)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IngredientCell.ingredientCellClassName) as? IngredientCell else {
             fatalError("Ingredient cell was not found")

@@ -29,6 +29,10 @@ func estimatedHeightForRowAt(in table: UITableView, indexPath: IndexPath) -> CGF
     table.delegate?.tableView?(table, estimatedHeightForRowAt: indexPath)
 }
 
+func titleForHeaderInSection(in table:UITableView, section: Int) -> String? {
+    table.dataSource?.tableView?(table, titleForHeaderInSection: section)
+}
+
 /// MARK:  - Buttons
 
 func tap(_ button: UIButton) {

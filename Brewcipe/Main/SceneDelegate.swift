@@ -27,7 +27,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func start() {
-        let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "another"], values: ["Wyeast 1272 - American Ale II™", "aaa ooo pppp"])
+        let ingredients: Ingredients = OrderedDictionary.init(uniqueKeys: ["yeast", "malt",],
+                                                              values: ["Wyeast 1272 - American Ale II™",
+                                                                       [["name": "Pale Ale",
+                                                                         "amount": [2.2: "kilograms"]],
+                                                                        ["name": "Caramalt",
+                                                                         "amount": [3.0: "kilograms"]]]])
         router.brewList([Brew(name: "a",
                               tagline: "a",
                               imageUrl: nil,
