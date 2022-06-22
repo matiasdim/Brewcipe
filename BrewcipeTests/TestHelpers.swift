@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// MARK: - Tables
+
 func numbersOfRows(in table: UITableView, section: Int) -> Int? {
     table.dataSource?.tableView(table, numberOfRowsInSection: section)
 }
@@ -25,4 +27,10 @@ func didSelectRowAt(in table: UITableView, indexPath: IndexPath) {
 
 func estimatedHeightForRowAt(in table: UITableView, indexPath: IndexPath) -> CGFloat? {
     table.delegate?.tableView?(table, estimatedHeightForRowAt: indexPath)
+}
+
+/// MARK:  - Buttons
+
+func tap(_ button: UIButton) {
+    button.sendActions(for: .touchUpInside)
 }

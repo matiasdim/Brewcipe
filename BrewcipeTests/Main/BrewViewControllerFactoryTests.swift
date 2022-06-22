@@ -46,6 +46,16 @@ class BrewViewControllerFactoryTests: XCTestCase {
         XCTAssertNotNil(brewDetailVC?.viewModel)
     }
     
+    func test_brewDetailViewController_ingredientsButtonActionIsFired_shouldFireCallback() {
+        var callbackWasFired = false
+        let brewDetailVC = makeBrewDetailVC(makeSUT(), makeBrew(), ingredientsDetailCallback: { _ in callbackWasFired = true })
+        brewDetailVC!.loadViewIfNeeded()
+        
+        tap(brewDetailVC!.ingredientsButton)
+        
+        XCTAssertTrue(callbackWasFired)
+    }
+    
     func test_ingredientsViewController_shouldReturnIingredientsViewControllerr() {
         let ingredientsVC = makeIngredientsVC(makeSUT(), makeBrew())
         
@@ -63,11 +73,11 @@ class BrewViewControllerFactoryTests: XCTestCase {
         return sut.ingredientsViewController(for: brew.ingredients) as? IngredientsViewController
     }
     
-    private func makeBrewDetailVC(_ sut: BrewViewControllerFactory, _ brew: Brew) -> BrewDetailViewController? {
-        return sut.brewDetailViewController(for: brew, ingredientsDetailCallback: { _ in }) as? BrewDetailViewController
+    private func makeBrewDetailVC(_ sut: BrewViewControllerFactory, _ brew: Brew, ingredientsDetailCallback: @escaping (Brew) -> Void = { _ in }) -> BrewDetailViewController? {
+        return sut.brewDetailViewController(for: brew, ingredientsDetailCallback: ingredientsDetailCallback) as? BrewDetailViewController
     }
     
-    private func makeBrewListVC(from sut: BrewViewControllerFactory, brews: [Brew] = [], selection: @escaping (Brew) -> Void = {_ in }) -> BrewListViewController? {
+    private func makeBrewListVC(from sut: BrewViewControllerFactory, brews: [Brew] = [], selection: @escaping (Brew) -> Void =  {_ in }) -> BrewListViewController? {
         return sut.brewsViewController(for: brews, selection: selection) as? BrewListViewController
     }
     

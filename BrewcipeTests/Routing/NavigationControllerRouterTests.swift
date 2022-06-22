@@ -63,8 +63,14 @@ class NavigationControllerRouterTests: XCTestCase {
         sut.brewListSelectionCallback(brew)
         
         XCTAssertEqual(navigationController.viewControllers.count, 1)
+    }
+    
+    func test_navigationControllerRouter_ingredientsDetailCallback_shouldPresentIngredientsViewController() {
+        XCTAssertEqual(navigationController.presentCallCount, 0)
         
+        sut.ingredientsDetailCallback(brew)
         
+        XCTAssertEqual(navigationController.presentCallCount, 1)
     }
     
     func test_brewList_shouldPushBrewsViewController () {
@@ -131,5 +137,6 @@ class NavigationControllerRouterTests: XCTestCase {
             return UIViewController()
         }
     }
+    
 
 }

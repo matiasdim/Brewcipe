@@ -62,7 +62,18 @@ class BrewDetailViewControllerTests: XCTestCase {
         XCTAssertEqual(sut.ingredientsButton.title(for: .normal), "Ingredients")
     }
     
+    func test_ingredientsButtonTapped_shouldCalliIgredientsButtonActionClosure() {
+        let sut = makeSut(brew: makeBrew())
+        XCTAssertFalse(ingredientsButtonActionCalled)
+        
+        tap(sut.ingredientsButton)
+        
+        XCTAssertTrue(ingredientsButtonActionCalled)
+    }
+    
     // MARK: - Helpers
+    var ingredientsButtonActionCalled = false
+    
     private func makeSutWithNoViewModel() -> BrewDetailViewController {
         let sut = BrewDetailViewController()
         sut.loadViewIfNeeded()
@@ -70,7 +81,7 @@ class BrewDetailViewControllerTests: XCTestCase {
     }
     
     private func makeSut(brew: Brew, selection: @escaping (Int) -> Void = { _ in }) -> BrewDetailViewController {
-        let sut = BrewDetailViewController(viewModel: makeViewModel(brew), ingredientsButtonAction: {  })
+        let sut = BrewDetailViewController(viewModel: makeViewModel(brew), ingredientsButtonAction: { [weak self] in self?.ingredientsButtonActionCalled = true })
         sut.loadViewIfNeeded()
         return sut
     }
