@@ -1,0 +1,16 @@
+PODS:
+  - SwiftCollections (0.2.0)
+
+DEPENDENCIES:
+  - SwiftCollections
+
+SPEC REPOS:
+  trunk:
+    - SwiftCollections
+
+SPEC CHECKSUMS:
+  SwiftCollections: 037a4d771299166ba843aa07a3e8285ac2a6d720
+
+PODFILE CHECKSUM: 054b4194bb80794106f77fa13eae998f22f9e7ce
+
+COCOAPODS: 1.10.2
