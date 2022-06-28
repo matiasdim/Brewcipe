@@ -1,0 +1,6 @@
+framework module SwiftCollections {
+  umbrella header "SwiftCollections-umbrella.h"
+
+  export *
+  module * { export * }
+}
